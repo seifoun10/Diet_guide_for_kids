@@ -4,7 +4,7 @@
 
 package gestionpediatre;
 
-import DAO.DAOPediatre;
+import DAO.PediatreDAO;
 import Entities.Pediatre;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
@@ -603,9 +603,9 @@ private void contactOnClick(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c
     public void validateTreatment(){
         for(int i=0; i<listePediatresTable.getRowCount(); i++){
             if(listePediatresTable.getValueAt(i, 4).equals("Acceptée"))
-                DAOPediatre.acceptPediatre((String)listePediatresTable.getValueAt(i, 0));
+                PediatreDAO.acceptPediatre((String)listePediatresTable.getValueAt(i, 0));
             if(listePediatresTable.getValueAt(i, 4).equals("Refusée"))
-                DAOPediatre.deletePediatre((String)listePediatresTable.getValueAt(i, 0));
+                PediatreDAO.deletePediatre((String)listePediatresTable.getValueAt(i, 0));
         }
     }
     

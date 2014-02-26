@@ -4,7 +4,7 @@
  */
 package gestionpediatre;
 
-import DAO.DAOPediatre;
+import DAO.PediatreDAO;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 import java.text.SimpleDateFormat;
@@ -24,7 +24,7 @@ public class PediatresEnAttenteTableModel extends AbstractTableModel{
     public PediatresEnAttenteTableModel(JTable jt){
         jt.setSelectionModel(new ForcedListSelectionModel());
         jt.setDefaultRenderer(String.class, new RowRenderer());
-        inacceptedPediatres = DAOPediatre.displayAllInacceptedPediatres();
+        inacceptedPediatres = PediatreDAO.displayAllInacceptedPediatres();
         pediatresMatrix = new Object[inacceptedPediatres.size()][5];
         fillMatrix();
     }
