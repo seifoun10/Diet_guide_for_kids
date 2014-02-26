@@ -4,11 +4,11 @@
  */
 package gestionpediatre;
 
-import DAO.PediatreDAO;
+import dao.PediatreDAO;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 import java.text.SimpleDateFormat;
-import Entities.Pediatre;
+import entities.Pediatre;
 import java.util.List;
 
 /**

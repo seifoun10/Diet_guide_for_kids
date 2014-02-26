@@ -4,8 +4,8 @@
 
 package gestionpediatre;
 
-import DAO.PediatreDAO;
-import Entities.Pediatre;
+import dao.PediatreDAO;
+import entities.Pediatre;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
 import org.jdesktop.application.SingleFrameApplication;
