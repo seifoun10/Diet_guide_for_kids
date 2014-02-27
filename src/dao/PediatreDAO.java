@@ -4,7 +4,6 @@
  */
 package dao;
 
-import DAO.*;
 import Connection.MyConnection;
 import entities.Pediatre;
 import java.sql.PreparedStatement;

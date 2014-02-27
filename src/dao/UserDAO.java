@@ -20,7 +20,7 @@ import java.util.List;
  *
  * @author tictacf12
  */
-public class UserDao {
+public class UserDAO {
     
     public List<User> getUserList(String login, String nom, String prenom, String email, String nationalite, Date dateInscription, Date dateNaissance, Boolean sexe){
         
