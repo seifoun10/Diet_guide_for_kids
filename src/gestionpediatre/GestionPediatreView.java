@@ -674,6 +674,14 @@ private void contactOnClick(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c
             reinitializeButton.setEnabled(false);
             contactButton.setEnabled(false);
             docsButton.setEnabled(false);
+            
+            loginLabel.setText("-");
+            nomLabel.setText("-");
+            prenomLabel.setText("-");
+            emailLabel.setText("-");
+            dateNaissanceLabel.setText("-");
+            nationaliteLabel.setText("-");
+            sexeLabel.setText("-");
         }
     }
     
