@@ -4,8 +4,7 @@
  */
 package dao;
 
-import DAO.*;
-import Connection.MyConnection;
+import util.MyConnection;
 import entities.Pediatre;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,7 +33,7 @@ public class PediatreDAO {
     }
     
     public static void deletePediatre(String login){
-        String requete = "DELETE FROM pediatres WHERE login = ?";
+        String requete = "DELETE FROM users WHERE login = ?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, login);
@@ -47,24 +46,24 @@ public class PediatreDAO {
     
     public static List<Pediatre> displayAllInacceptedPediatres (){
         List<Pediatre> listePediatres = new ArrayList<Pediatre>();
-        String requete = "SELECT * FROM pediatres WHERE isAccepted = 0 ORDER BY login";
+        String requete = "SELECT * FROM users, pediatres WHERE pediatres.isAccepted = 0 AND users.login = pediatres.login ORDER BY users.login";
         try {
             Statement statement = MyConnection.getInstance().createStatement();
             ResultSet resultat = statement.executeQuery(requete);
             while(resultat.next()){
                 Pediatre pediatre = new Pediatre();
-                Date sqlDate = resultat.getDate(7);
+                Date sqlDate = resultat.getDate("Date_De_Naissance");
                 
-                pediatre.setLogin(resultat.getString(1));
-                pediatre.setCin(resultat.getInt(2));
-                pediatre.setNom(resultat.getString(3));
-                pediatre.setPrenom(resultat.getString(4));
-                pediatre.setEmail(resultat.getString(5));
-                pediatre.setPwd(resultat.getString(6));
+                pediatre.setLogin(resultat.getString("Login"));
+                pediatre.setCin(resultat.getInt("CIN"));
+                pediatre.setNom(resultat.getString("Nom"));
+                pediatre.setPrenom(resultat.getString("Prenom"));
+                pediatre.setEmail(resultat.getString("Email"));
+                pediatre.setPwd(resultat.getString("pwd"));
                 pediatre.setDateDeNaissance(new java.util.Date(sqlDate.getTime()));
-                pediatre.setNationalite(resultat.getString(8));
-                pediatre.setSexe(resultat.getBoolean(9));
-                pediatre.setDoc(resultat.getString(10));
+                pediatre.setNationalite(resultat.getString("Nationalite"));
+                pediatre.setSexe(resultat.getBoolean("Sexe"));
+                pediatre.setDoc(resultat.getString("Doc"));
                 
                 listePediatres.add(pediatre);
             }

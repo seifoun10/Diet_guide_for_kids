@@ -1,16 +1,24 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-
+/**
+ *
+ * @author Karray
+ */
 public class MyConnection {
 
-     private static final  String driver = "com.mysql.jdbc.Driver";
-   private static final  String url = "jdbc:mysql://localhost:3306/administrateur";
+   private static final  String driver = "com.mysql.jdbc.Driver";
+   private static final  String url = "jdbc:mysql://localhost:3306/Diet_Guide_For_Kids";
    private static final  String login = "root";
-   private static final  String pwd = "azerty";
+   private static final  String pwd = "root";
    private static Connection con;
 
 
