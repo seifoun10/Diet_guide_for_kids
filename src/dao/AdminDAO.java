@@ -1,4 +1,4 @@
-/*aaa
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import entities.Administrateur;
 import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
 import util.MyConnection;
 public class AdminDAO {
     static Administrateur admindao;
@@ -29,10 +30,9 @@ public class AdminDAO {
                 admindao =new Administrateur();
                 admindao.setLogin(resultat.getString("login"));
                 admindao.setPassword(resultat.getString("passwd"));
-                admindao.setCin(resultat.getString("cin"));
                 log=admindao.getLogin();
                 pass=admindao.getPassword();
-                cin=admindao.getCin();
+                
                 System.out.println(admindao.toString());
             }
             //return admindao;
@@ -44,16 +44,18 @@ public class AdminDAO {
     }
     
      public void updateMP(Administrateur d){
-        String requete = "update admin set passwd=? where cin=?";
+        String requete = "update admin set passwd=? where login=?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, d.getPassword());
-            ps.setString(2, d.getCin());
+            ps.setString(2, d.getLogin());
             ps.executeUpdate();
-            System.out.println("modification mmot de passe avec succès");
+            System.out.println("");
+            JOptionPane.showMessageDialog(null, "modification mot de passe avec succès","Mot de passe",1);
         } catch (SQLException ex) {
            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("erreur lors de la mise à jour "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Vous n'êtes pas connecté sur la machine qui contien la base","",1);
         }
     }
 //}
