@@ -22,6 +22,7 @@ public class User {
     private Date dateNaissance;
     private String nationalite;
     private Date dateInscription;
+    private String type;
 
     public String getLogin() {
         return login;
@@ -93,5 +94,13 @@ public class User {
 
     public void setDateInscription(Date dateInscription) {
         this.dateInscription = dateInscription;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

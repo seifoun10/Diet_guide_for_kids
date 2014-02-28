@@ -7,7 +7,6 @@ package gestionpediatre;
 import dao.PediatreDAO;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
-import java.text.SimpleDateFormat;
 import entities.Pediatre;
 import java.util.List;
 
@@ -17,7 +16,6 @@ import java.util.List;
  */
 public class PediatresEnAttenteTableModel extends AbstractTableModel{
     JTable jt;
-    SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
     List<Pediatre> inacceptedPediatres;
     Object[][] pediatresMatrix;
     

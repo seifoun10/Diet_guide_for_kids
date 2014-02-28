@@ -19,6 +19,7 @@ public class RechercheForm extends javax.swing.JFrame {
      * Creates new form RechercheForm
      */
     Boolean sexe=null;
+    String type="Admin Forum Parent Pediatre ";
     public RechercheForm() {
         initComponents();
     }
@@ -85,7 +86,7 @@ public class RechercheForm extends javax.swing.JFrame {
             }
         });
 
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe));
+        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
         jScrollPane1.setViewportView(rechercheT);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -124,6 +125,11 @@ public class RechercheForm extends javax.swing.JFrame {
             }
         });
 
+        dateNaissanceDP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dateNaissanceDPActionPerformed(evt);
+            }
+        });
         dateNaissanceDP.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 dateNaissanceDPPropertyChange(evt);
@@ -191,11 +197,26 @@ public class RechercheForm extends javax.swing.JFrame {
 
         parentCB.setSelected(true);
         parentCB.setText("Parent");
+        parentCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                parentCBActionPerformed(evt);
+            }
+        });
 
         pediatreCB.setSelected(true);
         pediatreCB.setText("Pédiatre");
+        pediatreCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pediatreCBActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Vider les champs");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Consulter le profil");
 
@@ -326,64 +347,100 @@ public class RechercheForm extends javax.swing.JFrame {
 
     private void loginTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginTFKeyReleased
         // TODO add your handling code here:
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe));
+        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_loginTFKeyReleased
 
     private void nomTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomTFKeyReleased
         // TODO add your handling code here:
-         rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe));
+         rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_nomTFKeyReleased
 
     private void prenomTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_prenomTFKeyReleased
         // TODO add your handling code here:
-         rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe));
+         rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_prenomTFKeyReleased
 
     private void emailTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailTFKeyReleased
         // TODO add your handling code here:
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe));
+        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_emailTFKeyReleased
 
     private void nationnaliteTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nationnaliteTFKeyReleased
         // TODO add your handling code here:
-       rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe));
+       rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_nationnaliteTFKeyReleased
 
     private void dateInscriptionDPPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dateInscriptionDPPropertyChange
         // TODO add your handling code here:
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe));
+        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_dateInscriptionDPPropertyChange
 
     private void dateNaissanceDPPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dateNaissanceDPPropertyChange
         // TODO add your handling code here:
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe));
+        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_dateNaissanceDPPropertyChange
 
     private void femmeRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_femmeRBActionPerformed
         // TODO add your handling code here:
         sexe= new Boolean(false);
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe));
+        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_femmeRBActionPerformed
 
     private void hommeRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hommeRBActionPerformed
         // TODO add your handling code here:
         sexe= new Boolean(true);
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe));
+        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_hommeRBActionPerformed
 
     private void tousRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tousRBActionPerformed
         // TODO add your handling code here:
         sexe= null;
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe));
+        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_tousRBActionPerformed
 
     private void adminCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminCBActionPerformed
         // TODO add your handling code here:
+        if(adminCB.isSelected()) type += "Admin ";
+        else type = type.replace("Admin ", "");
+        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_adminCBActionPerformed
 
     private void forumCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forumCBActionPerformed
         // TODO add your handling code here:
+        if(forumCB.isSelected()) type += "Forum ";
+        else type = type.replace("Forum ", "");
+        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_forumCBActionPerformed
+
+    private void parentCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parentCBActionPerformed
+        // TODO add your handling code here:
+        if(parentCB.isSelected()) type += "Parent ";
+        else type = type.replace("Parent ", "");
+        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+    }//GEN-LAST:event_parentCBActionPerformed
+
+    private void pediatreCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pediatreCBActionPerformed
+        // TODO add your handling code here:
+        if(pediatreCB.isSelected()) type += "Pediatre ";
+        else type = type.replace("Pediatre ", "");
+        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+    }//GEN-LAST:event_pediatreCBActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        loginTF.setText("");
+        nomTF.setText("");
+        prenomTF.setText("");
+        dateInscriptionDP.setDate(null);
+        dateNaissanceDP.setDate(null);
+        emailTF.setText("");
+        nationnaliteTF.setText("");
+        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void dateNaissanceDPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateNaissanceDPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dateNaissanceDPActionPerformed
 
     /**
      * @param args the command line arguments
