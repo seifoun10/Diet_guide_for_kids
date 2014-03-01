@@ -6,9 +6,13 @@
 
 package gui;
 
+import dao.UserDAO;
 import java.awt.Image;
+import static javax.management.Query.and;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.showConfirmDialog;
 import javax.swing.UIManager;
 
 /**
@@ -62,9 +66,9 @@ public class RechercheForm extends javax.swing.JFrame {
         forumCB = new javax.swing.JCheckBox();
         parentCB = new javax.swing.JCheckBox();
         pediatreCB = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        viderChampsB = new javax.swing.JButton();
+        consulterB = new javax.swing.JButton();
+        supprimerB = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,6 +93,7 @@ public class RechercheForm extends javax.swing.JFrame {
         });
 
         rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+        rechercheT.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(rechercheT);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -213,16 +218,21 @@ public class RechercheForm extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Vider les champs");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        viderChampsB.setText("Vider les champs");
+        viderChampsB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                viderChampsBActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Consulter le profil");
+        consulterB.setText("Consulter le profil");
 
-        jButton3.setText("Supprimer le profil");
+        supprimerB.setText("Supprimer le profil");
+        supprimerB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supprimerBActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -231,7 +241,7 @@ public class RechercheForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
+                    .addComponent(viderChampsB)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,9 +278,9 @@ public class RechercheForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(supprimerB)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
+                        .addComponent(consulterB)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -325,9 +335,9 @@ public class RechercheForm extends javax.swing.JFrame {
                             .addComponent(jLabel7))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton1))
+                    .addComponent(consulterB)
+                    .addComponent(supprimerB)
+                    .addComponent(viderChampsB))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -428,7 +438,7 @@ public class RechercheForm extends javax.swing.JFrame {
         rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_pediatreCBActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void viderChampsBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viderChampsBActionPerformed
         // TODO add your handling code here:
         loginTF.setText("");
         nomTF.setText("");
@@ -438,11 +448,22 @@ public class RechercheForm extends javax.swing.JFrame {
         emailTF.setText("");
         nationnaliteTF.setText("");
         rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_viderChampsBActionPerformed
 
     private void dateNaissanceDPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateNaissanceDPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dateNaissanceDPActionPerformed
+
+    private void supprimerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerBActionPerformed
+        if(rechercheT.getSelectedRow()!=-1){
+            String login= (String)rechercheT.getValueAt(rechercheT.getSelectedRow(), 0);
+            if (JOptionPane.showConfirmDialog(null,"Êtes-vous sur de vouloir supprimer l'utilisateur "+login+" ?","Confirmation de suppression.",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE )==JOptionPane.YES_OPTION) {
+                new UserDAO().deleteUser(login);
+                rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+            }
+        }
+    
+    }//GEN-LAST:event_supprimerBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -475,15 +496,13 @@ public class RechercheForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox adminCB;
+    private javax.swing.JButton consulterB;
     private org.jdesktop.swingx.JXDatePicker dateInscriptionDP;
     private org.jdesktop.swingx.JXDatePicker dateNaissanceDP;
     private javax.swing.JTextField emailTF;
     private javax.swing.JRadioButton femmeRB;
     private javax.swing.JCheckBox forumCB;
     private javax.swing.JRadioButton hommeRB;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -502,7 +521,9 @@ public class RechercheForm extends javax.swing.JFrame {
     private javax.swing.JTextField prenomTF;
     private javax.swing.JTable rechercheT;
     private javax.swing.ButtonGroup sexeBG;
+    private javax.swing.JButton supprimerB;
     private javax.swing.JRadioButton tousRB;
     private javax.swing.ButtonGroup typeBG;
+    private javax.swing.JButton viderChampsB;
     // End of variables declaration//GEN-END:variables
 }
