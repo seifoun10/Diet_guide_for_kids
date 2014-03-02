@@ -6,7 +6,7 @@
 
 package test;
 
-import resources.MyTableModel;
+import gui.MyTableModel;
 
 /**
  *
