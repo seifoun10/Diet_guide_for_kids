@@ -15,6 +15,42 @@ import java.util.List;
 public class Parent extends User {
     private List<Enfant> enfant;
     private String travail;
+    int nbTopic;
+    int nbMessage;
+    private List<Pediatre> pediatreFavoris;
+
+    public int getNbTopic() {
+        return nbTopic;
+    }
+
+    public void setNbTopic(int nbTopic) {
+        this.nbTopic = nbTopic;
+    }
+
+    public int getNbMessage() {
+        return nbMessage;
+    }
+
+    public void setNbMessage(int nbMessage) {
+        this.nbMessage = nbMessage;
+    }
+
+    public List<Pediatre> getPediatreFavoris() {
+        return pediatreFavoris;
+    }
+
+    public void setPediatreFavoris(List<Pediatre> pediatreFavoris) {
+        this.pediatreFavoris = pediatreFavoris;
+    }
+
+    public List<Article> getArticleFavoris() {
+        return articleFavoris;
+    }
+
+    public void setArticleFavoris(List<Article> articleFavoris) {
+        this.articleFavoris = articleFavoris;
+    }
+    private List<Article> articleFavoris;
     
 
     public List<Enfant> getEnfant() {
