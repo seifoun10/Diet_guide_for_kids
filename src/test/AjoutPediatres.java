@@ -14,10 +14,8 @@ import gestionpediatre.*;
 import dao.PediatreDAO;
 import entities.Pediatre;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
-import javax.xml.ws.Action;
 
 /**
  *
@@ -30,16 +28,6 @@ public class AjoutPediatres extends javax.swing.JPanel {
     /** Creates new form AjoutPediatres */
     public AjoutPediatres() {
         initComponents();
-    }
-
-    @Action
-    public void showAboutBox() {
-        if (aboutBox == null) {
-            JFrame mainFrame = GestionPediatreApp.getApplication().getMainFrame();
-            aboutBox = new GestionPediatreAboutBox(mainFrame);
-            aboutBox.setLocationRelativeTo(mainFrame);
-        }
-        GestionPediatreApp.getApplication().show(aboutBox);
     }
 
     /** This method is called from within the constructor to
@@ -403,7 +391,6 @@ public class AjoutPediatres extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
 private void validerButtonvalidateOnClick(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerButtonvalidateOnClick
-// TODO add your handling code here:
     if(pediatresTM.countAccepted() == 0 && pediatresTM.countRefused() == 0){
         JOptionPane.showMessageDialog(
                 null,
@@ -433,7 +420,6 @@ private void validerButtonvalidateOnClick(java.awt.event.ActionEvent evt) {//GEN
 }//GEN-LAST:event_validerButtonvalidateOnClick
 
 private void reinitializeButtonreinitializeOnClick(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reinitializeButtonreinitializeOnClick
-// TODO add your handling code here:
     setState("Non traitée");
     countStates();
     enableDisable();
@@ -441,7 +427,6 @@ private void reinitializeButtonreinitializeOnClick(java.awt.event.ActionEvent ev
 }//GEN-LAST:event_reinitializeButtonreinitializeOnClick
 
 private void refuserButtonrefuseOnClick(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refuserButtonrefuseOnClick
-// TODO add your handling code here:
     setState("Refusée");
     countStates();
     enableDisable();
@@ -449,7 +434,6 @@ private void refuserButtonrefuseOnClick(java.awt.event.ActionEvent evt) {//GEN-F
 }//GEN-LAST:event_refuserButtonrefuseOnClick
 
 private void accepterButtonacceptOnClick(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accepterButtonacceptOnClick
-// TODO add your handling code here:
     setState("Acceptée");
     countStates();
     enableDisable();
@@ -461,22 +445,18 @@ private void contactButtoncontactOnClick(java.awt.event.ActionEvent evt) {//GEN-
 }//GEN-LAST:event_contactButtoncontactOnClick
 
 private void listePediatresTablemouseSelection(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listePediatresTablemouseSelection
-// TODO add your handling code here:
     enableDisable();
 }//GEN-LAST:event_listePediatresTablemouseSelection
 
 private void listePediatresTablemouseDragSelection(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listePediatresTablemouseDragSelection
-// TODO add your handling code here:
     enableDisable();
 }//GEN-LAST:event_listePediatresTablemouseDragSelection
 
 private void listePediatresTablekeySelection(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listePediatresTablekeySelection
-// TODO add your handling code here:
     enableDisable();
 }//GEN-LAST:event_listePediatresTablekeySelection
 
 private void refreshButtonrefreshOnClick(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonrefreshOnClick
-// TODO add your handling code here:
     int response = JOptionPane.showConfirmDialog(
             null,
             "Voulez-vous vraiment rafraîchir la liste ?",
