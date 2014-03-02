@@ -6,6 +6,7 @@
 
 package dao;
 
+import entities.Enfant;
 import entities.Parent;
 import entities.User;
 import util.MyConnection;
@@ -38,13 +39,18 @@ public class ParentDAO {
                 parent.setDateNaissance(resultat.getDate("Date_De_Naissance"));
                 parent.setNationalite(resultat.getString("Nationalite"));
                 parent.setTravail(resultat.getString("Travail"));
+                parent.setEnfant(new EnfantDAO().getEnfantList(parent.getLogin()));
+                parent.setNbMessage(new MessageDAO().countMessage(parent.getLogin()));
+                parent.setNbMessage(new TopicDAO().countTopic(parent.getLogin()));
+                parent.setPediatreFavoris(new PediatreDAO().getPediatreList(parent.getLogin()));
+                parent.setArticleFavoris(new ArticleDAO().getArticleList(parent.getLogin()));
                 
             }
-            return depot;
+            return parent;
 
         } catch (SQLException ex) {
            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("erreur lors de la recherche du depot "+ex.getMessage());
+            System.out.println("erreur lors de la recherche du parent "+ex.getMessage());
             return null;
         }
     }

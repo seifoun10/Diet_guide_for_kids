@@ -14,6 +14,7 @@ public class Pediatre extends User{
     
     private String doc;
     private String info;
+    private long cin;
     
 
     public String getInfo() {
@@ -30,5 +31,13 @@ public class Pediatre extends User{
 
     public void setDoc(String doc) {
         this.doc = doc;
+    }
+
+    public long getCin() {
+        return cin;
+    }
+
+    public void setCin(long cin) {
+        this.cin = cin;
     }
 }

@@ -60,11 +60,32 @@ public class PediatreDAO {
                 pediatre.setPrenom(resultat.getString("Prenom"));
                 pediatre.setEmail(resultat.getString("Email"));
                 pediatre.setPwd(resultat.getString("pwd"));
-                pediatre.setDateDeNaissance(new java.util.Date(sqlDate.getTime()));
+                pediatre.setDateNaissance(resultat.getDate("Date_De_Naissance"));
                 pediatre.setNationalite(resultat.getString("Nationalite"));
                 pediatre.setSexe(resultat.getBoolean("Sexe"));
                 pediatre.setDoc(resultat.getString("Doc"));
                 
+                listePediatres.add(pediatre);
+            }
+            return listePediatres;
+        } catch (SQLException ex) {
+            System.out.println("Erreur lors du chargement des pediatres. " + ex.getMessage());
+            return null;
+        }
+    }
+    
+    public static List<Pediatre> getPediatreList (String loginParent){
+        List<Pediatre> listePediatres = new ArrayList<Pediatre>();
+        String requete = "SELECT Login, Nom, Prenom FROM users, evaluation_pediatres WHERE login_parent=? and login_pediatre=login ";
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setString(1, loginParent);
+            ResultSet resultat = ps.executeQuery();
+            while(resultat.next()){
+                Pediatre pediatre = new Pediatre();                
+                pediatre.setLogin(resultat.getString("Login"));
+                pediatre.setNom(resultat.getString("Nom"));
+                pediatre.setPrenom(resultat.getString("Prenom"));                
                 listePediatres.add(pediatre);
             }
             return listePediatres;
