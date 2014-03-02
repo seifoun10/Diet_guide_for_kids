@@ -76,7 +76,7 @@ public class RecherchePanel extends javax.swing.JPanel {
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setText("Prenom");
+        jLabel3.setText("Prénom");
 
         pediatreCB.setSelected(true);
         pediatreCB.setText("Pédiatre");
@@ -135,10 +135,10 @@ public class RecherchePanel extends javax.swing.JPanel {
         });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setText("E-mail");
+        jLabel4.setText("Email");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel7.setText("Nationnalité");
+        jLabel7.setText("Nationalité");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setText("Date de Naissance");

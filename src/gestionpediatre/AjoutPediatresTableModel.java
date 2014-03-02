@@ -14,12 +14,12 @@ import java.util.List;
  *
  * @author Killer
  */
-public class PediatresEnAttenteTableModel extends AbstractTableModel{
+public class AjoutPediatresTableModel extends AbstractTableModel{
     JTable jt;
     List<Pediatre> inacceptedPediatres;
     Object[][] pediatresMatrix;
     
-    public PediatresEnAttenteTableModel(JTable jt){
+    public AjoutPediatresTableModel(JTable jt){
         jt.setSelectionModel(new ForcedListSelectionModel());
         jt.setDefaultRenderer(String.class, new RowRenderer());
         inacceptedPediatres = PediatreDAO.displayAllInacceptedPediatres();

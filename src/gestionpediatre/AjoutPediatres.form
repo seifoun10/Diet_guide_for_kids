@@ -1,0 +1,458 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" resourceKey="Form.background"/>
+    <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="refreshButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="validerButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel2" alignment="1" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="reinitializeButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="refuserButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="accepterButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="selectionnePanel" min="-2" max="-2" attributes="0"/>
+                  <Component id="contactButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="docsButton" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="selectionnePanel" min="-2" max="-2" attributes="1"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="contactButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="docsButton" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                              <Component id="reinitializeButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="accepterButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="refuserButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Component id="jPanel2" max="32767" attributes="1"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="validerButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="refreshButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="validerButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="validerButton.text"/>
+        <Property name="name" type="java.lang.String" value="validerButton" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="validerButtonvalidateOnClick"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="reinitializeButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="reinitializeButton.text"/>
+        <Property name="toolTipText" type="java.lang.String" resourceKey="reinitializeButton.toolTipText"/>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="name" type="java.lang.String" value="reinitializeButton" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="reinitializeButtonreinitializeOnClick"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JPanel" name="selectionnePanel">
+      <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="selectionnePanel.background"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="P&#xe9;diatre selectionn&#xe9;">
+              <Property name="titleX" resourceKey="selectionnePanel.border.title"/>
+              <Property name="color" resourceKey="selectionnePanel.border.titleColor"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="name" type="java.lang.String" value="selectionnePanel" noResource="true"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabelDaN" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelEma" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelPse" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelNom" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelPre" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelNat" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelSex" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelDaI" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="sexeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="nationaliteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="prenomLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="nomLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="loginLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="emailLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="dateNaissanceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="dateInscriptionLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="119" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="loginLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="nomLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="prenomLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="emailLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="dateNaissanceLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="26" pref="26" max="26" attributes="0"/>
+                          <Component id="nationaliteLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="sexeLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabelPse" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabelNom" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabelPre" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabelEma" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabelDaN" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="dateInscriptionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelDaI" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabelNat" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabelSex" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabelPse">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="jLabelPse.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="jLabelPse" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelNom">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="jLabelNom.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="jLabelNom" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelPre">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="jLabelPre.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="jLabelPre" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelEma">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="jLabelEma.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="jLabelEma" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelDaN">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="jLabelDaN.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="jLabelDaN" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelNat">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="jLabelNat.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="jLabelNat" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelSex">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="jLabelSex.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="jLabelSex" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="dateNaissanceLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="dateNaissanceLabel.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="dateNaissanceLabel" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="emailLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="emailLabel.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="emailLabel" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="loginLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="loginLabel.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="loginLabel" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="nomLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="nomLabel.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="nomLabel" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="prenomLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="prenomLabel.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="prenomLabel" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="nationaliteLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="nationaliteLabel.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="nationaliteLabel" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="sexeLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="sexeLabel.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="sexeLabel" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelDaI">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="jLabelDaI.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="jLabelDaI" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="dateInscriptionLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="dateInscriptionLabel.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="dateInscriptionLabel" noResource="true"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="refuserButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="refuserButton.text"/>
+        <Property name="toolTipText" type="java.lang.String" resourceKey="refuserButton.toolTipText"/>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="name" type="java.lang.String" value="refuserButton" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="refuserButtonrefuseOnClick"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="accepterButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="accepterButton.text"/>
+        <Property name="toolTipText" type="java.lang.String" resourceKey="accepterButton.toolTipText"/>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="name" type="java.lang.String" value="accepterButton" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="accepterButtonacceptOnClick"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="GestionPediatreView_accepterButton"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="contactButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="contactButton.text"/>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="name" type="java.lang.String" value="contactButton" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contactButtoncontactOnClick"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+      <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="jPanel2.background"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Liste des demandes d&apos;ajouts des p&#xe9;diatres">
+              <Property name="titleX" resourceKey="jPanel2.border.title"/>
+              <Property name="color" resourceKey="jPanel2.border.titleColor"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+        <Property name="name" type="java.lang.String" value="jPanel2" noResource="true"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jScrollPane1" alignment="0" pref="707" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="statesCount" min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <Component id="jScrollPane1" pref="257" max="32767" attributes="1"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="statesCount" min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jScrollPane1" noResource="true"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="listePediatresTable">
+              <Properties>
+                <Property name="autoCreateRowSorter" type="boolean" value="true"/>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="pediatresTM = new gestionpediatre.AjoutPediatresTableModel(listePediatresTable)" type="code"/>
+                </Property>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Curseur par d&#xe9;faut"/>
+                </Property>
+                <Property name="name" type="java.lang.String" value="listePediatresTable" noResource="true"/>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="listePediatresTablemouseSelection"/>
+                <EventHandler event="mouseDragged" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="listePediatresTablemouseDragSelection"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="listePediatresTablekeySelection"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="statesCount">
+          <Properties>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="pediatresTM.countAccepted()&#xa;                    +&quot; accept&#xe9;(s) et &quot;&#xa;                    + pediatresTM.countRefused()&#xa;                    + &quot; refus&#xe9;(s) sur &quot;&#xa;                    + listePediatresTable.getRowCount()" type="code"/>
+            </Property>
+            <Property name="name" type="java.lang.String" value="statesCount" noResource="true"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="refreshButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="refreshButton.text"/>
+        <Property name="name" type="java.lang.String" value="refreshButton" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="refreshButtonrefreshOnClick"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="docsButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="docsButton.text"/>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="name" type="java.lang.String" value="docsButton" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="docsButtondocConsultOnClick"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

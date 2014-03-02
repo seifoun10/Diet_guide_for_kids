@@ -176,7 +176,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="11" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Prenom"/>
+        <Property name="text" type="java.lang.String" value="Pr&#xe9;nom"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="pediatreCB">
@@ -269,7 +269,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="11" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="E-mail"/>
+        <Property name="text" type="java.lang.String" value="Email"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
@@ -277,7 +277,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="11" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nationnalit&#xe9;"/>
+        <Property name="text" type="java.lang.String" value="Nationalit&#xe9;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">

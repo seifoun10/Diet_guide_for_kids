@@ -63,13 +63,14 @@ public class TestFrame extends javax.swing.JFrame {
                 }
             }
         });
-        containerPanel = new ContainerGradientPanel();
-        containerPanel = new javax.swing.JPanel();
-        containerPanel = new ContainerGradientPanel();
-        recherchePanel = new RecherchePanel();
-        recherchePanel = recherchePanel = new RecherchePanel();
-        recherchePanel = new RecherchePanel();
-        jPanel2 = new javax.swing.JPanel();
+        gestionUsersContainer = new javax.swing.JPanel();
+        gestionUsersContainer = new ContainerGradientPanel();
+        gestionUserPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        ajoutPediatresContainer = new javax.swing.JPanel();
+        ajoutPediatresContainer = new ContainerGradientPanel();
+        jLabel2 = new javax.swing.JLabel();
+        ajoutPediatresPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,68 +86,105 @@ public class TestFrame extends javax.swing.JFrame {
 
         mainTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
         mainTabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        mainTabbedPane.setFocusable(false);
         mainTabbedPane.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 
-        containerPanel = new ContainerGradientPanel();
-        containerPanel.setBackground(new java.awt.Color(255, 255, 255));
-        containerPanel = new ContainerGradientPanel();
+        gestionUsersContainer.setBackground(new java.awt.Color(255, 255, 255));
 
-        recherchePanel = new RecherchePanel();
-        recherchePanel.setBackground(new java.awt.Color(255, 255, 255));
-        recherchePanel = new RecherchePanel();
-        recherchePanel = new RecherchePanel();
+        gestionUserPanel.setBackground(new java.awt.Color(255, 255, 255));
+        gestionUserPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        recherchePanel = new RecherchePanel();
-
-        javax.swing.GroupLayout recherchePanelLayout = new javax.swing.GroupLayout(recherchePanel);
-        recherchePanel.setLayout(recherchePanelLayout);
-        recherchePanelLayout.setHorizontalGroup(
-            recherchePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 517, Short.MAX_VALUE)
+        javax.swing.GroupLayout gestionUserPanelLayout = new javax.swing.GroupLayout(gestionUserPanel);
+        gestionUserPanel.setLayout(gestionUserPanelLayout);
+        gestionUserPanelLayout.setHorizontalGroup(
+            gestionUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        recherchePanelLayout.setVerticalGroup(
-            recherchePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 263, Short.MAX_VALUE)
+        gestionUserPanelLayout.setVerticalGroup(
+            gestionUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 299, Short.MAX_VALUE)
         );
 
-        recherchePanel = new RecherchePanel();
+        gestionUserPanel = new RecherchePanel();
 
-        recherchePanel = new RecherchePanel();
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(39, 58, 138));
+        jLabel1.setText("Gestion des utilisateurs");
 
-        javax.swing.GroupLayout containerPanelLayout = new javax.swing.GroupLayout(containerPanel);
-        containerPanel.setLayout(containerPanelLayout);
-        containerPanelLayout.setHorizontalGroup(
-            containerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout gestionUsersContainerLayout = new javax.swing.GroupLayout(gestionUsersContainer);
+        gestionUsersContainer.setLayout(gestionUsersContainerLayout);
+        gestionUsersContainerLayout.setHorizontalGroup(
+            gestionUsersContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(gestionUsersContainerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(recherchePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(gestionUsersContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(gestionUsersContainerLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 476, Short.MAX_VALUE))
+                    .addComponent(gestionUserPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        containerPanelLayout.setVerticalGroup(
-            containerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(containerPanelLayout.createSequentialGroup()
+        gestionUsersContainerLayout.setVerticalGroup(
+            gestionUsersContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gestionUsersContainerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(recherchePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(gestionUserPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        recherchePanel = new RecherchePanel();
-        recherchePanel = new RecherchePanel();
+        mainTabbedPane.addTab("Gestion des utilisateurs", gestionUsersContainer);
 
-        mainTabbedPane.addTab("Gestion des utilisateurs", containerPanel);
+        ajoutPediatresContainer.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 537, Short.MAX_VALUE)
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(39, 58, 138));
+        jLabel2.setText("Traitements des demandes d'ajouts des nouveaux pédiatres");
+
+        ajoutPediatresPanel.setBackground(new java.awt.Color(255, 255, 255));
+        ajoutPediatresPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        javax.swing.GroupLayout ajoutPediatresPanelLayout = new javax.swing.GroupLayout(ajoutPediatresPanel);
+        ajoutPediatresPanel.setLayout(ajoutPediatresPanelLayout);
+        ajoutPediatresPanelLayout.setHorizontalGroup(
+            ajoutPediatresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 285, Short.MAX_VALUE)
+        ajoutPediatresPanelLayout.setVerticalGroup(
+            ajoutPediatresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 299, Short.MAX_VALUE)
         );
 
-        mainTabbedPane.addTab("tab2", jPanel2);
+        ajoutPediatresPanel = new AjoutPediatres();
+        ajoutPediatresPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        javax.swing.GroupLayout ajoutPediatresContainerLayout = new javax.swing.GroupLayout(ajoutPediatresContainer);
+        ajoutPediatresContainer.setLayout(ajoutPediatresContainerLayout);
+        ajoutPediatresContainerLayout.setHorizontalGroup(
+            ajoutPediatresContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ajoutPediatresContainerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ajoutPediatresContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ajoutPediatresPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(ajoutPediatresContainerLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(0, 246, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        ajoutPediatresContainerLayout.setVerticalGroup(
+            ajoutPediatresContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ajoutPediatresContainerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ajoutPediatresPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        mainTabbedPane.addTab("Demandes d'ajouts de pédiatres", ajoutPediatresContainer);
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -154,30 +192,31 @@ public class TestFrame extends javax.swing.JFrame {
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator4)
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator2)
-                            .addComponent(mainTabbedPane)))
-                    .addComponent(jSeparator4))
+                            .addComponent(mainTabbedPane))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator3)
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(mainTabbedPane))
                     .addComponent(jSeparator1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jSeparator3)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        mainTabbedPane.getAccessibleContext().setAccessibleName("tab");
         for(int i=0; i<mainTabbedPane.getTabCount(); i++)
         if(i == mainTabbedPane.getSelectedIndex()){
             mainTabbedPane.setBackgroundAt(i, Color.WHITE);
@@ -232,14 +271,17 @@ public class TestFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel containerPanel;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel ajoutPediatresContainer;
+    private javax.swing.JPanel ajoutPediatresPanel;
+    private javax.swing.JPanel gestionUserPanel;
+    private javax.swing.JPanel gestionUsersContainer;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JTabbedPane mainTabbedPane;
-    private javax.swing.JPanel recherchePanel;
     // End of variables declaration//GEN-END:variables
 }

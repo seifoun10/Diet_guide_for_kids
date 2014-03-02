@@ -52,7 +52,6 @@ public class PediatreDAO {
             ResultSet resultat = statement.executeQuery(requete);
             while(resultat.next()){
                 Pediatre pediatre = new Pediatre();
-                Date sqlDate = resultat.getDate("Date_De_Naissance");
                 
                 pediatre.setLogin(resultat.getString("Login"));
                 pediatre.setCin(resultat.getInt("CIN"));
@@ -60,7 +59,8 @@ public class PediatreDAO {
                 pediatre.setPrenom(resultat.getString("Prenom"));
                 pediatre.setEmail(resultat.getString("Email"));
                 pediatre.setPwd(resultat.getString("pwd"));
-                pediatre.setDateDeNaissance(new java.util.Date(sqlDate.getTime()));
+                pediatre.setDateNaissance(resultat.getDate("Date_De_Naissance"));
+                pediatre.setDateInscription(resultat.getDate("Date_Inscription"));
                 pediatre.setNationalite(resultat.getString("Nationalite"));
                 pediatre.setSexe(resultat.getBoolean("Sexe"));
                 pediatre.setDoc(resultat.getString("Doc"));
