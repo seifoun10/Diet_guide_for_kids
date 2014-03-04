@@ -23,13 +23,14 @@ public class EnfantDAO {
         
         List<Enfant> listEnfant = new ArrayList<Enfant>();
         
-        String requete = "SELECT * FROM enfants WHERE Login=?";
+        String requete = "SELECT * FROM enfants WHERE Login_parent=?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, parent+"%");
             
             ResultSet resultat = ps.executeQuery();
             while(resultat.next()){
+                
                 Enfant enfant =new Enfant();
                 enfant.setId(resultat.getInt("Id"));
                 enfant.setNom(resultat.getString("Nom"));

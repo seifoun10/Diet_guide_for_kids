@@ -6,6 +6,12 @@
 
 package gui;
 
+import dao.ParentDAO;
+import entities.Parent;
+import java.text.SimpleDateFormat;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
+
 /**
  *
  * @author tictacf12
@@ -15,8 +21,14 @@ public class ParentForm extends javax.swing.JFrame {
     /**
      * Creates new form ParentForm
      */
-    public ParentForm() {
+    Parent parent;
+    
+    public ParentForm(String login) {
+        parent= new ParentDAO().findParentByString(login);
+        
+        
         initComponents();
+        if(parent.getEnfant().size()==0)idEnfantCB.addItem("Aucun enfant");
     }
 
     /**
@@ -118,23 +130,25 @@ public class ParentForm extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel9.setText("Date d'inscription");
 
-        dateNaissanceL.setText("jLabel10");
+        dateNaissanceL.setText(new SimpleDateFormat("dd/MM/yyyy").format(parent.getDateNaissance()));
 
-        travailL.setText("jLabel11");
+        travailL.setText(parent.getTravail());
 
-        dateInscriptionL.setText("jLabel12");
+        dateInscriptionL.setText(new SimpleDateFormat("dd/MM/yyyy").format(parent.getDateInscription()));
 
-        sexeL.setText("jLabel13");
+        if(parent.isSexe())
+        sexeL.setText("Homme");
+        else sexeL.setText("Femme");
 
-        nationaliteL.setText("jLabel14");
+        nationaliteL.setText(parent.getNationalite());
 
-        emailL.setText("jLabel15");
+        emailL.setText(parent.getEmail());
 
-        prenomL.setText("jLabel16");
+        prenomL.setText(parent.getPrenom());
 
-        nomL.setText("jLabel17");
+        nomL.setText(parent.getNom());
 
-        loginL.setText("jLabel18");
+        loginL.setText(parent.getLogin());
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -218,11 +232,11 @@ public class ParentForm extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel21.setText("Nombre de message postés sur le forum");
 
-        nbMessageL.setText("jLabel22");
+        nbMessageL.setText(""+parent.getNbMessage());
 
-        nbTopicL.setText("jLabel24");
+        nbTopicL.setText(""+parent.getNbTopic());
 
-        nbEnfantL.setText("jLabel25");
+        nbEnfantL.setText(""+parent.getEnfant().size());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -311,23 +325,27 @@ public class ParentForm extends javax.swing.JFrame {
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel34.setText("IMC actuelle");
 
-        dateAjoutEnfantL.setText("jLabel35");
+        dateAjoutEnfantL.setText("-");
 
-        nationaliteEnfantL.setText("jLabel36");
+        nationaliteEnfantL.setText("-");
 
-        imcAjoutL.setText("jLabel37");
+        imcAjoutL.setText("-");
 
-        imcActuelleL.setText("jLabel38");
+        imcActuelleL.setText("-");
 
-        dateNaissanceEnfantL.setText("jLabel39");
+        dateNaissanceEnfantL.setText("-");
 
-        sexeEnfantL.setText("jLabel40");
+        sexeEnfantL.setText("-");
 
-        prenomEnfantL.setText("jLabel41");
+        prenomEnfantL.setText("-");
 
-        nomEnfantL.setText("jLabel42");
+        nomEnfantL.setText("-");
 
-        idEnfantCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        if(parent.getEnfant().size()!=0){
+            DefaultComboBoxModel<Integer> m = new DefaultComboBoxModel<Integer>();
+            for(int i=0;i<parent.getEnfant().size();i++) m.addElement(new Integer(parent.getEnfant().get(i).getId()));
+            idEnfantCB.setModel(m);
+        }
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -347,16 +365,19 @@ public class ParentForm extends javax.swing.JFrame {
                     .addComponent(jLabel26))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nomEnfantL)
-                    .addComponent(prenomEnfantL)
-                    .addComponent(sexeEnfantL)
-                    .addComponent(dateNaissanceEnfantL)
-                    .addComponent(imcActuelleL)
-                    .addComponent(imcAjoutL)
-                    .addComponent(nationaliteEnfantL)
-                    .addComponent(dateAjoutEnfantL)
-                    .addComponent(idEnfantCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(110, Short.MAX_VALUE))
+                    .addComponent(idEnfantCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(prenomEnfantL)
+                            .addComponent(nomEnfantL)
+                            .addComponent(sexeEnfantL)
+                            .addComponent(dateNaissanceEnfantL)
+                            .addComponent(nationaliteEnfantL)
+                            .addComponent(dateAjoutEnfantL)
+                            .addComponent(imcAjoutL)
+                            .addComponent(imcActuelleL))))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -417,38 +438,20 @@ public class ParentForm extends javax.swing.JFrame {
                 .addContainerGap(131, Short.MAX_VALUE))
         );
 
+        if(parent.getEnfant().size()!=0)
+
         jTabbedPane1.addTab("Enfants", jPanel3);
 
         jLabel44.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel44.setText("Article favoris");
 
-        articleFavorisT.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
+        articleFavorisT.setModel(new PediatreTableModel(parent.getLogin()));
         jScrollPane1.setViewportView(articleFavorisT);
 
         jLabel45.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel45.setText("Pédiatre favoris");
 
-        pediatreFavorisT.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
+        pediatreFavorisT.setModel(new ArticleTableModel(parent.getLogin()));
         jScrollPane2.setViewportView(pediatreFavorisT);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -458,11 +461,14 @@ public class ParentForm extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel44)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel45)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel44)
+                            .addComponent(jLabel45))
+                        .addGap(0, 253, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -488,10 +494,10 @@ public class ParentForm extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
-        jTabbedPane1.getAccessibleContext().setAccessibleName("Information générales");
+        jTabbedPane1.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -526,7 +532,8 @@ public class ParentForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ParentForm().setVisible(true);
+                new ParentForm("AbuAli").setVisible(true);
+                
             }
         });
     }

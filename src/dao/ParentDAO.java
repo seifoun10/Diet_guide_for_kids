@@ -21,9 +21,9 @@ import java.util.List;
  * @author tictacf12
  */
 public class ParentDAO {
-    public Parent findUserByString(String login){
+    public Parent findParentByString(String login){
      Parent parent = new Parent();
-     String requete = "select * from PARENT where login=?";
+     String requete = "select * from PARENTS p, users u where p.login=? and u.login=p.login";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, login);

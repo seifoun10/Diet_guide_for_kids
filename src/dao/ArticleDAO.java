@@ -22,7 +22,7 @@ public class ArticleDAO {
     
     public static List<Article> getArticleList (String loginParent){
         List<Article> listeArticle = new ArrayList<Article>();
-        String requete = "SELECT * FROM article, article_pediatres WHERE login_parent=? and Id_Article=Id";
+        String requete = "SELECT * FROM articles, favoris_articles WHERE login_parent=? and Id_Article=Id";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, loginParent);

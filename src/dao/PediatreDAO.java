@@ -76,7 +76,7 @@ public class PediatreDAO {
     
     public static List<Pediatre> getPediatreList (String loginParent){
         List<Pediatre> listePediatres = new ArrayList<Pediatre>();
-        String requete = "SELECT Login, Nom, Prenom FROM users, evaluation_pediatres WHERE login_parent=? and login_pediatre=login ";
+        String requete = "SELECT Login, Nom, Prenom FROM users, favoris_pediatres WHERE login_parent=? and login_pediatre=login ";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, loginParent);

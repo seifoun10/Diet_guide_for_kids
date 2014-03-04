@@ -18,7 +18,7 @@ import util.MyConnection;
 public class TopicDAO {
     
     public int countTopic(String posteur){
-        String requete = "SELECT COUNT(*) as nb_topic FROM topic WHEN login_createur=?";
+        String requete = "SELECT COUNT(*) as nb_topic FROM topics WHERE login_createur=?";
         int nbTopic=-1;
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
