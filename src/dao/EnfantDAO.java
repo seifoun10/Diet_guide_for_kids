@@ -20,14 +20,12 @@ import java.util.List;
  */
 public class EnfantDAO {
     public List<Enfant> getEnfantList(String parent){
-        
         List<Enfant> listEnfant = new ArrayList<Enfant>();
         
         String requete = "SELECT * FROM enfants WHERE Login_parent=?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
-            ps.setString(1, parent+"%");
-            
+            ps.setString(1, parent);
             ResultSet resultat = ps.executeQuery();
             while(resultat.next()){
                 
@@ -35,11 +33,11 @@ public class EnfantDAO {
                 enfant.setId(resultat.getInt("Id"));
                 enfant.setNom(resultat.getString("Nom"));
                 enfant.setPrenom(resultat.getString("Prenom"));
-                enfant.setDateNaissance(resultat.getDate("Date_De_Naissance"));
+                enfant.setDateNaissance(resultat.getDate("Date_Naissance"));
                 enfant.setSexe(resultat.getBoolean("Sexe"));
                 enfant.setNationalite(resultat.getString("Nationalite"));
                 enfant.setDateAjout(resultat.getDate("Date_Ajout"));
-                enfant.setImcActuel(resultat.getFloat("IMC_Actuelle"));
+                enfant.setImcActuel(resultat.getFloat("IMC"));
                 enfant.setImcAjout(resultat.getFloat("IMC_Ajout"));
                 listEnfant.add(enfant);
             }

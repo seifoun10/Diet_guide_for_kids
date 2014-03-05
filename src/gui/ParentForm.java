@@ -11,6 +11,7 @@ import entities.Parent;
 import java.text.SimpleDateFormat;
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFrame;
 
 /**
  *
@@ -25,10 +26,7 @@ public class ParentForm extends javax.swing.JFrame {
     
     public ParentForm(String login) {
         parent= new ParentDAO().findParentByString(login);
-        
-        
         initComponents();
-        if(parent.getEnfant().size()==0)idEnfantCB.addItem("Aucun enfant");
     }
 
     /**
@@ -80,6 +78,7 @@ public class ParentForm extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
+        idEnfantCB = new javax.swing.JComboBox();
         dateAjoutEnfantL = new javax.swing.JLabel();
         nationaliteEnfantL = new javax.swing.JLabel();
         imcAjoutL = new javax.swing.JLabel();
@@ -88,7 +87,6 @@ public class ParentForm extends javax.swing.JFrame {
         sexeEnfantL = new javax.swing.JLabel();
         prenomEnfantL = new javax.swing.JLabel();
         nomEnfantL = new javax.swing.JLabel();
-        idEnfantCB = new javax.swing.JComboBox();
         jPanel4 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -99,7 +97,9 @@ public class ParentForm extends javax.swing.JFrame {
 
         jLabel23.setText("jLabel23");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(368, 434));
+        setMinimumSize(new java.awt.Dimension(368, 434));
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Informations générales"));
 
@@ -325,27 +325,45 @@ public class ParentForm extends javax.swing.JFrame {
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel34.setText("IMC actuelle");
 
-        dateAjoutEnfantL.setText("-");
-
-        nationaliteEnfantL.setText("-");
-
-        imcAjoutL.setText("-");
-
-        imcActuelleL.setText("-");
-
-        dateNaissanceEnfantL.setText("-");
-
-        sexeEnfantL.setText("-");
-
-        prenomEnfantL.setText("-");
-
-        nomEnfantL.setText("-");
-
         if(parent.getEnfant().size()!=0){
             DefaultComboBoxModel<Integer> m = new DefaultComboBoxModel<Integer>();
             for(int i=0;i<parent.getEnfant().size();i++) m.addElement(new Integer(parent.getEnfant().get(i).getId()));
             idEnfantCB.setModel(m);
         }
+        idEnfantCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idEnfantCBActionPerformed(evt);
+            }
+        });
+        idEnfantCB.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                idEnfantCBPropertyChange(evt);
+            }
+        });
+
+        dateAjoutEnfantL.setText("-");
+        if(!parent.getEnfant().isEmpty()) dateAjoutEnfantL.setText(new SimpleDateFormat("dd/MM/yyyy").format(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getDateAjout()));
+
+        nationaliteEnfantL.setText("-");
+        if(parent.getEnfant().size()!=0) nationaliteEnfantL.setText(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getNationalite());
+
+        imcAjoutL.setText("-");
+        if(!parent.getEnfant().isEmpty()) imcAjoutL.setText(""+parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getImcAjout());
+
+        imcActuelleL.setText("-");
+        if(!parent.getEnfant().isEmpty()) imcActuelleL.setText(""+parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getImcActuel());
+
+        dateNaissanceEnfantL.setText("-");
+        if(parent.getEnfant().size()!=0) dateNaissanceEnfantL.setText(new SimpleDateFormat("dd/MM/yyyy").format(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getDateNaissance()));
+
+        sexeEnfantL.setText("-");
+        if(!parent.getEnfant().isEmpty()) if(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).isSexe()) sexeEnfantL.setText("Homme");else sexeEnfantL.setText("Femme");
+
+        prenomEnfantL.setText("-");
+        if(parent.getEnfant().size()!=0) prenomEnfantL.setText(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getPrenom());
+
+        nomEnfantL.setText("-");
+        if(parent.getEnfant().size()!=0) nomEnfantL.setText(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getNom());
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -501,6 +519,23 @@ public class ParentForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void idEnfantCBPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_idEnfantCBPropertyChange
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_idEnfantCBPropertyChange
+
+    private void idEnfantCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idEnfantCBActionPerformed
+        // TODO add your handling code here:
+        nomEnfantL.setText(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getNom());
+        prenomEnfantL.setText(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getPrenom());
+        if(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).isSexe()) sexeEnfantL.setText("Homme");else sexeEnfantL.setText("Femme");
+        dateNaissanceEnfantL.setText(new SimpleDateFormat("dd/MM/yyyy").format(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getDateNaissance()));
+        nationaliteEnfantL.setText(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getNationalite());
+        dateAjoutEnfantL.setText(new SimpleDateFormat("dd/MM/yyyy").format(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getDateAjout()));
+        imcAjoutL.setText(""+parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getImcAjout());
+        imcActuelleL.setText(""+parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getImcActuel());
+    }//GEN-LAST:event_idEnfantCBActionPerformed
 
     /**
      * @param args the command line arguments

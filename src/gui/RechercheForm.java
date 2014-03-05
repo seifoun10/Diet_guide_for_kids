@@ -10,6 +10,7 @@ import dao.UserDAO;
 import java.awt.Image;
 import static javax.management.Query.and;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showConfirmDialog;
@@ -226,6 +227,11 @@ public class RechercheForm extends javax.swing.JFrame {
         });
 
         consulterB.setText("Consulter le profil");
+        consulterB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consulterBActionPerformed(evt);
+            }
+        });
 
         supprimerB.setText("Supprimer le profil");
         supprimerB.addActionListener(new java.awt.event.ActionListener() {
@@ -464,6 +470,12 @@ public class RechercheForm extends javax.swing.JFrame {
         }
     
     }//GEN-LAST:event_supprimerBActionPerformed
+
+    private void consulterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consulterBActionPerformed
+        // TODO add your handling code here:
+        JFrame pf = new ParentForm((String) rechercheT.getValueAt(rechercheT.getSelectedRow(), 0));
+        pf.setVisible(true);
+    }//GEN-LAST:event_consulterBActionPerformed
 
     /**
      * @param args the command line arguments
