@@ -6,6 +6,8 @@
 
 package entities;
 
+import java.util.Date;
+
 /**
  *
  * @author tictacf12
@@ -15,6 +17,10 @@ public class Article {
     private String type;
     private String titre;
     private String loginAuteur;
+    private Date dateAjout;
+    private int evaluation;
+    private int nbLecture;
+    private int nbFavoris;
 
     public int getId() {
         return id;
@@ -46,6 +52,38 @@ public class Article {
 
     public void setLoginAuteur(String loginAuteur) {
         this.loginAuteur = loginAuteur;
+    }
+
+    public Date getDateAjout() {
+        return dateAjout;
+    }
+
+    public void setDateAjout(Date dateAjout) {
+        this.dateAjout = dateAjout;
+    }
+
+    public int getEvaluation() {
+        return evaluation;
+    }
+
+    public void setEvaluation(int evaluation) {
+        this.evaluation = evaluation;
+    }
+
+    public int getNbLecture() {
+        return nbLecture;
+    }
+
+    public void setNbLecture(int nbLecture) {
+        this.nbLecture = nbLecture;
+    }
+
+    public int getNbFavoris() {
+        return nbFavoris;
+    }
+
+    public void setNbFavoris(int nbFavoris) {
+        this.nbFavoris = nbFavoris;
     }
     
 }

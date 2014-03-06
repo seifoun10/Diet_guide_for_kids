@@ -5,6 +5,7 @@
 package entities;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -12,10 +13,16 @@ import java.util.Date;
  */
 public class Pediatre extends User{
     
+    private String adress;
+    private String telephone;
     private String doc;
     private String info;
-    private long cin;
-    
+    private String cin;
+    private int evaluation;
+    private int nbTopic;
+    private int nbFavoris;
+    private int nbMessage;
+    private List<Article> Article;
 
     public String getInfo() {
         return info;
@@ -33,11 +40,67 @@ public class Pediatre extends User{
         this.doc = doc;
     }
 
-    public long getCin() {
+    public String getCin() {
         return cin;
     }
 
-    public void setCin(long cin) {
+    public void setCin(String cin) {
         this.cin = cin;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+    public int getEvaluation() {
+        return evaluation;
+    }
+
+    public void setEvaluation(int evaluation) {
+        this.evaluation = evaluation;
+    }
+
+    public int getNbTopic() {
+        return nbTopic;
+    }
+
+    public void setNbTopic(int nbTopic) {
+        this.nbTopic = nbTopic;
+    }
+
+    public int getNbFavoris() {
+        return nbFavoris;
+    }
+
+    public void setNbFavoris(int nbFavoris) {
+        this.nbFavoris = nbFavoris;
+    }
+
+    public int getNbMessage() {
+        return nbMessage;
+    }
+
+    public void setNbMessage(int nbMessage) {
+        this.nbMessage = nbMessage;
+    }
+
+    public List<Article> getArticle() {
+        return Article;
+    }
+
+    public void setArticle(List<Article> Article) {
+        this.Article = Article;
     }
 }

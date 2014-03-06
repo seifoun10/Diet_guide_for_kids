@@ -3,26 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package gui;
 
-import dao.AdminDAO;
-import entities.Administrateur;
+import dao.AdminForumDAO;
+import entities.AdminForum;
 import java.text.SimpleDateFormat;
 
 /**
  *
  * @author tictacf12
  */
-public class AdminForm extends javax.swing.JFrame {
+public class AdminForumForm extends javax.swing.JFrame {
 
     /**
-     * Creates new form AdminForm
+     * Creates new form AdminForumForm
      */
-    
-    Administrateur admin;
-    public AdminForm(String login) {
-        admin= new AdminDAO().findAdministrateurByString(login);
+     AdminForum adminForum;
+    public AdminForumForm(String login) {
+        adminForum= new AdminForumDAO().findAdminForumByString(login);
         initComponents();
     }
 
@@ -56,8 +54,6 @@ public class AdminForm extends javax.swing.JFrame {
         cinL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(null);
-        setMinimumSize(null);
         setResizable(false);
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Informations générales"));
@@ -86,28 +82,28 @@ public class AdminForm extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel9.setText("Date d'inscription");
 
-        dateNaissanceL.setText(new SimpleDateFormat("dd/MM/yyyy").format(admin.getDateNaissance()));
+        dateNaissanceL.setText(new SimpleDateFormat("dd/MM/yyyy").format(adminForum.getDateNaissance()));
 
-        dateInscriptionL.setText(new SimpleDateFormat("dd/MM/yyyy").format(admin.getDateInscription()));
+        dateInscriptionL.setText(new SimpleDateFormat("dd/MM/yyyy").format(adminForum.getDateInscription()));
 
-        if(admin.isSexe())
+        if(adminForum.isSexe())
         sexeL.setText("Homme");
         else sexeL.setText("Femme");
 
-        nationaliteL.setText(admin.getNationalite());
+        nationaliteL.setText(adminForum.getNationalite());
 
-        emailL.setText(admin.getEmail());
+        emailL.setText(adminForum.getEmail());
 
-        prenomL.setText(admin.getPrenom());
+        prenomL.setText(adminForum.getPrenom());
 
-        nomL.setText(admin.getNom());
+        nomL.setText(adminForum.getNom());
 
-        loginL.setText(admin.getLogin());
+        loginL.setText(adminForum.getLogin());
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setText("CIN");
 
-        cinL.setText(admin.getCin());
+        cinL.setText(adminForum.getCin());
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -136,7 +132,7 @@ public class AdminForm extends javax.swing.JFrame {
                     .addComponent(nationaliteL)
                     .addComponent(sexeL)
                     .addComponent(dateNaissanceL))
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(171, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,20 +211,20 @@ public class AdminForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminForumForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminForumForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminForumForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminForumForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminForm("sil3arbi").setVisible(true);
+                new AdminForumForm("wa7id").setVisible(true);
             }
         });
     }

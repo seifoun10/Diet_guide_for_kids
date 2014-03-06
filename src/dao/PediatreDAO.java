@@ -55,7 +55,7 @@ public class PediatreDAO {
                 Date sqlDate = resultat.getDate("Date_De_Naissance");
                 
                 pediatre.setLogin(resultat.getString("Login"));
-                pediatre.setCin(resultat.getInt("CIN"));
+                pediatre.setCin(resultat.getString("CIN"));
                 pediatre.setNom(resultat.getString("Nom"));
                 pediatre.setPrenom(resultat.getString("Prenom"));
                 pediatre.setEmail(resultat.getString("Email"));
@@ -93,5 +93,85 @@ public class PediatreDAO {
             System.out.println("Erreur lors du chargement des pediatres. " + ex.getMessage());
             return null;
         }
+    }
+
+    public Pediatre findPediatreByString(String login) {
+
+        Pediatre pediatre = new Pediatre();
+        String requete = "select * from Pediatres p, users u where p.login=? and u.login=p.login";
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setString(1, login);
+            ResultSet resultat = ps.executeQuery();
+            while (resultat.next())
+            {
+                pediatre.setLogin(resultat.getString("Login"));
+                pediatre.setNom(resultat.getString("Nom"));
+                pediatre.setPrenom(resultat.getString("Prenom"));
+                pediatre.setEmail(resultat.getString("Email"));
+                pediatre.setSexe(resultat.getBoolean("Sexe"));
+                pediatre.setDateInscription(resultat.getDate("Date_Inscription"));
+                pediatre.setDateNaissance(resultat.getDate("Date_De_Naissance"));
+                pediatre.setNationalite(resultat.getString("Nationalite"));
+                pediatre.setAdress(resultat.getString("Adresse"));
+                pediatre.setTelephone(resultat.getString("Telephone"));
+                pediatre.setCin(resultat.getString("CIN"));
+                pediatre.setEvaluation(calculEvaluation(pediatre.getLogin()));
+                pediatre.setNbMessage(new MessageDAO().countMessage(pediatre.getLogin()));
+                pediatre.setNbTopic(new TopicDAO().countTopic(pediatre.getLogin()));
+                pediatre.setNbFavoris(countFavoris(pediatre.getLogin()));
+                pediatre.setArticle(new ArticleDAO().getOwnArticleList(pediatre.getLogin()));
+                
+            }
+            return pediatre;
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la recherche du pediatre "+ex.getMessage());
+            return null;
+        }
+    }
+
+    private int countFavoris(String login) {
+        int nbFavoris=0;  
+        String requete = "SELECT count(*) as nb FROM favoris_pediatres where Login_Pediatre=?";
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setString(1, login);
+            ResultSet resultat = ps.executeQuery();
+            while (resultat.next())
+            {
+                nbFavoris=resultat.getInt("nb");
+            }
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la recherche des favoris pédiatre "+ex.getMessage());
+            return 0;
+        }
+        
+        return nbFavoris;        
+    }
+
+    private int calculEvaluation(String login) {
+        int note;
+        int sommeNote=0;
+        int nombreNote=-1;
+        String requete = "SELECT SUM( Note ) as somme, count(*) as nombre FROM evaluations_pediatres where Login_Pediatre=?";
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setString(1, login);
+            ResultSet resultat = ps.executeQuery();
+            while (resultat.next())
+            {
+                sommeNote=resultat.getInt("somme");
+                nombreNote=resultat.getInt("nombre");
+            }
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la recherche de l'évaluation pédiatre "+ex.getMessage());
+            return 0;
+        }
+        if(nombreNote==0) return 0;
+        note=Math.round(sommeNote/nombreNote);
+        return note;
     }
 }

@@ -62,11 +62,12 @@ public class AdminDAO {
 
     public Administrateur findAdministrateurByString(String login) {
         Administrateur admin = new Administrateur();
-     String requete = "select * from admins p, users u where p.login_admin=? and u.login=p.login_admin";
+     String requete = "select * from admins p, users u where p.login=? and u.login=p.login";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, login);
             ResultSet resultat = ps.executeQuery();
+            
             while (resultat.next())
             {
                 admin.setLogin(resultat.getString("Login"));

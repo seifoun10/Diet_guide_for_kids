@@ -473,7 +473,13 @@ public class RechercheForm extends javax.swing.JFrame {
 
     private void consulterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consulterBActionPerformed
         // TODO add your handling code here:
-        JFrame pf = new ParentForm((String) rechercheT.getValueAt(rechercheT.getSelectedRow(), 0));
+        JFrame pf;
+        String typeP=(String) rechercheT.getValueAt(rechercheT.getSelectedRow(), 8);
+        String loginP=(String) rechercheT.getValueAt(rechercheT.getSelectedRow(), 0);
+        if("Parent".equals(typeP))pf= new ParentForm(loginP);
+        else if("Admin".equals(typeP)) pf= new AdminForm(loginP);
+        else if("Forum".equals(typeP)) pf= new AdminForumForm(loginP);
+        else pf=new PediatreForm(loginP);
         pf.setVisible(true);
     }//GEN-LAST:event_consulterBActionPerformed
 

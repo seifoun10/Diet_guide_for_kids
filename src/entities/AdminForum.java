@@ -6,12 +6,11 @@
 
 package entities;
 
-
 /**
  *
- * @author Admin
+ * @author tictacf12
  */
-public class Administrateur extends User {
+public class AdminForum extends User{
     private String cin;
 
     public String getCin() {
@@ -21,13 +20,4 @@ public class Administrateur extends User {
     public void setCin(String cin) {
         this.cin = cin;
     }
-
-    /**
-     * @return the login
-     */
-  
-
-   
-    
-    
 }

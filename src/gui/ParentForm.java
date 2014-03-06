@@ -100,6 +100,7 @@ public class ParentForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(368, 434));
         setMinimumSize(new java.awt.Dimension(368, 434));
+        setResizable(false);
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Informations générales"));
 
