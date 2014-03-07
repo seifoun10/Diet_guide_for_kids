@@ -17,12 +17,12 @@ import util.MyConnection;
  */
 public class TopicDAO {
     
-    public int countTopic(String posteur){
-        String requete = "SELECT COUNT(*) as nb_topic FROM topics WHERE login_createur=?";
+    public int countTopic(String auteur){
+        String requete = "SELECT COUNT(*) as nb_topic FROM topic WHERE auteur=?";
         int nbTopic=-1;
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
-            ps.setString(1, posteur);
+            ps.setString(1, auteur);
             ResultSet resultat = ps.executeQuery();
             while (resultat.next())
             {

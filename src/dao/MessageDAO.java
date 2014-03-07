@@ -18,7 +18,7 @@ import util.MyConnection;
 public class MessageDAO {
 
     public int countMessage(String posteur){
-        String requete = "SELECT COUNT(*) as nb_message FROM message_forum WHERE login_posteur=?";
+        String requete = "SELECT COUNT(*) as nb_message FROM messages_forum WHERE auteur=?";
         int nbMessage=-1;
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);

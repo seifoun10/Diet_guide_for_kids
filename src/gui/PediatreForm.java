@@ -94,8 +94,6 @@ public class PediatreForm extends javax.swing.JFrame {
         setResizable(false);
 
         jTabbedPane1.setMaximumSize(null);
-        jTabbedPane1.setMinimumSize(null);
-        jTabbedPane1.setPreferredSize(null);
 
         adresseL.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Informations générales"));
 
@@ -142,7 +140,7 @@ public class PediatreForm extends javax.swing.JFrame {
         loginL.setText(pediatre.getLogin());
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel8.setText("Telephone");
+        jLabel8.setText("Téléphone");
 
         telephoneL.setText("-");
         if(pediatre.getTelephone()!=null) telephoneL.setText(pediatre.getTelephone());
@@ -158,7 +156,7 @@ public class PediatreForm extends javax.swing.JFrame {
 
         note.setText(""+pediatre.getEvaluation());
 
-        jLabel13.setText("/10");
+        jLabel13.setText("/ 10");
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel16.setText("CIN");
@@ -174,25 +172,18 @@ public class PediatreForm extends javax.swing.JFrame {
                 .addGroup(adresseLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(adresseLLayout.createSequentialGroup()
                         .addComponent(jLabel3)
+                        .addGap(77, 77, 77)
                         .addGroup(adresseLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(adresseLLayout.createSequentialGroup()
-                                .addGap(77, 77, 77)
-                                .addComponent(prenomL))
-                            .addGroup(adresseLLayout.createSequentialGroup()
-                                .addGap(77, 77, 77)
-                                .addGroup(adresseLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nationaliteL)
-                                    .addComponent(emailL)
-                                    .addComponent(sexeL)))))
+                            .addComponent(prenomL)
+                            .addComponent(nationaliteL)
+                            .addComponent(emailL)
+                            .addComponent(sexeL)))
                     .addGroup(adresseLLayout.createSequentialGroup()
                         .addGroup(adresseLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(adresseLLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(91, 91, 91))
-                            .addGroup(adresseLLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(96, 96, 96))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
                             .addComponent(jLabel16))
+                        .addGap(91, 91, 91)
                         .addGroup(adresseLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cinL)
                             .addComponent(nomL)
@@ -204,10 +195,9 @@ public class PediatreForm extends javax.swing.JFrame {
                         .addGroup(adresseLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(jLabel8)
-                            .addGroup(adresseLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel11)
-                                .addComponent(jLabel9))
-                            .addComponent(jLabel10))
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel9))
                         .addGap(18, 18, 18)
                         .addGroup(adresseLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(adresseLLayout.createSequentialGroup()
@@ -218,7 +208,7 @@ public class PediatreForm extends javax.swing.JFrame {
                             .addComponent(dateInscriptionL)
                             .addComponent(dateNaissanceL)
                             .addComponent(adressL))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         adresseLLayout.setVerticalGroup(
             adresseLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,9 +226,9 @@ public class PediatreForm extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(nomL))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(adresseLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(prenomL, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(adresseLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(prenomL, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(adresseLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -278,13 +268,13 @@ public class PediatreForm extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Informations du compte"));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel19.setText("Nombre d'article ajouter");
+        jLabel19.setText("Nombre d'articles ajoutés");
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel20.setText("Nombre de topics créer sur le forum");
+        jLabel20.setText("Nombre de topics créés sur le forum");
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel21.setText("Nombre de message postés sur le forum");
+        jLabel21.setText("Nombre de messages postés sur le forum");
 
         nbMessageL.setText(""+pediatre.getNbMessage());
 
@@ -293,7 +283,7 @@ public class PediatreForm extends javax.swing.JFrame {
         nbEnfantL.setText(""+pediatre.getArticle().size());
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel14.setText("Nombre de mise en favoris");
+        jLabel14.setText("Nombre de mises en favoris");
 
         jLabel15.setText(""+pediatre.getNbFavoris());
 
@@ -304,17 +294,17 @@ public class PediatreForm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel21)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel14))
+                    .addComponent(jLabel19))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15)
                     .addComponent(nbEnfantL)
                     .addComponent(nbTopicL)
                     .addComponent(nbMessageL))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -342,11 +332,12 @@ public class PediatreForm extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adresseL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(adresseL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,7 +402,7 @@ public class PediatreForm extends javax.swing.JFrame {
         titreArticleL.setText("-");
         if(pediatre.getArticle().size()!=0) titreArticleL.setText(pediatre.getArticle().get(idArticleCB.getSelectedIndex()).getTitre());
 
-        jLabel17.setText("/10");
+        jLabel17.setText("/ 10");
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel32.setText("Date d'ajout au site");
@@ -437,20 +428,24 @@ public class PediatreForm extends javax.swing.JFrame {
                             .addComponent(idArticleCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(typeArticleL)
                                     .addComponent(titreArticleL)
                                     .addGroup(jPanel6Layout.createSequentialGroup()
                                         .addComponent(noteArticle)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel17))
-                                    .addComponent(dateAjoutArticleL)
-                                    .addComponent(nbLectureL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(nbFavorisL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                    .addComponent(dateAjoutArticleL)))))
+                    .addComponent(jLabel32)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nbLectureL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nbFavorisL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jLabel31)
-                    .addComponent(jLabel30)
-                    .addComponent(jLabel32))
-                .addContainerGap(176, Short.MAX_VALUE))
+                    .addComponent(jLabel30))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -476,14 +471,14 @@ public class PediatreForm extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
                     .addComponent(dateAjoutArticleL))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel30)
-                    .addComponent(nbLectureL, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE))
+                    .addComponent(nbLectureL, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel31)
-                    .addComponent(nbFavorisL, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE))
+                    .addComponent(nbFavorisL, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -491,14 +486,17 @@ public class PediatreForm extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(281, Short.MAX_VALUE))
+                .addContainerGap(276, Short.MAX_VALUE))
         );
 
         if(!pediatre.getArticle().isEmpty())
@@ -509,7 +507,7 @@ public class PediatreForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -564,7 +562,7 @@ public class PediatreForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PediatreForm("Akrem").setVisible(true);
+                new PediatreForm("aaa").setVisible(true);
             }
         });
     }

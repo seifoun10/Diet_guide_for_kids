@@ -16,7 +16,7 @@ public class Article {
     private int id;
     private String type;
     private String titre;
-    private String loginAuteur;
+    private String auteur;
     private Date dateAjout;
     private int evaluation;
     private int nbLecture;
@@ -46,12 +46,12 @@ public class Article {
         this.titre = titre;
     }
 
-    public String getLoginAuteur() {
-        return loginAuteur;
+    public String getAuteur() {
+        return auteur;
     }
 
-    public void setLoginAuteur(String loginAuteur) {
-        this.loginAuteur = loginAuteur;
+    public void setAuteur(String auteur) {
+        this.auteur = auteur;
     }
 
     public Date getDateAjout() {

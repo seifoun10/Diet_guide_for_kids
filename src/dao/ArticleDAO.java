@@ -22,16 +22,16 @@ public class ArticleDAO {
     
     public static List<Article> getArticleList (String loginParent){
         List<Article> listeArticle = new ArrayList<Article>();
-        String requete = "SELECT * FROM articles, favoris_articles WHERE login_parent=? and Id_Article=Id";
+        String requete = "SELECT * FROM articles a, favoris_articles fa WHERE login_parent=? and fa.Id_Article=a.Id_Article";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, loginParent);
             ResultSet resultat = ps.executeQuery();
             while(resultat.next()){
-                Article article = new Article();                
-                article.setId(resultat.getInt("Id"));
+                Article article = new Article();
+                article.setId(resultat.getInt("a.Id_Article"));
                 article.setTitre(resultat.getString("Titre"));
-                article.setLoginAuteur(resultat.getString("Login_Auteur"));
+                article.setAuteur(resultat.getString("Auteur"));
                 article.setType(resultat.getString("Type"));
                 listeArticle.add(article);
             }
@@ -44,20 +44,20 @@ public class ArticleDAO {
 
     List<Article> getOwnArticleList(String login) {
         List<Article> listeArticle = new ArrayList<Article>();
-        String requete = "SELECT * FROM articles WHERE login_auteur=?";
+        String requete = "SELECT * FROM articles WHERE auteur=?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, login);
             ResultSet resultat = ps.executeQuery();
             while(resultat.next()){
                 Article article = new Article();                
-                article.setId(resultat.getInt("Id"));
+                article.setId(resultat.getInt("Id_article"));
                 article.setTitre(resultat.getString("Titre"));
-                article.setLoginAuteur(resultat.getString("Login_Auteur"));
+                article.setAuteur(resultat.getString("Auteur"));
                 article.setType(resultat.getString("Type"));
                 article.setDateAjout(resultat.getDate("Date_Ajout"));
                 article.setEvaluation(getArticleEvaluation(article.getId()));
-                article.setNbLecture(resultat.getInt("nb_lectures"));
+                article.setNbLecture(resultat.getInt("Vues"));
                 article.setNbFavoris(countFavoris(article.getId()));
                 
                 listeArticle.add(article);

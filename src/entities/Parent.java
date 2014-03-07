@@ -14,7 +14,6 @@ import java.util.List;
  */
 public class Parent extends User {
     private List<Enfant> enfant;
-    private String travail;
     int nbTopic;
     int nbMessage;
     private List<Pediatre> pediatreFavoris;
@@ -60,14 +59,5 @@ public class Parent extends User {
     public void setEnfant(List<Enfant> enfant) {
         this.enfant = enfant;
     }
-
-    public String getTravail() {
-        return travail;
-    }
-
-    public void setTravail(String travail) {
-        this.travail = travail;
-    }
-    
     
 }

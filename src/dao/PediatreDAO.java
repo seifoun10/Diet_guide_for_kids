@@ -20,8 +20,9 @@ import java.sql.Statement;
  */
 public class PediatreDAO {
     
+    //ahmed
     public static void acceptPediatre(String login){
-        String requete = "UPDATE pediatres SET isAccepted = true WHERE login = ?";
+        String requete = "UPDATE pediatres SET isAccepted = true WHERE login_pediatre = ?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, login);
@@ -31,9 +32,9 @@ public class PediatreDAO {
             System.out.println("Erreur lors de la modification. "+ex.getMessage());
         }
     }
-    
+    //ahmed
     public static void deletePediatre(String login){
-        String requete = "DELETE FROM users WHERE login = ?";
+        String requete = "DELETE FROM users WHERE login_user = ?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, login);
@@ -43,18 +44,17 @@ public class PediatreDAO {
             System.out.println("Erreur lors de la suppression. "+ex.getMessage());
         }
     }
-    
+    //ahmed
     public static List<Pediatre> displayAllInacceptedPediatres (){
         List<Pediatre> listePediatres = new ArrayList<Pediatre>();
-        String requete = "SELECT * FROM users, pediatres WHERE pediatres.isAccepted = 0 AND users.login = pediatres.login ORDER BY users.login";
+        String requete = "SELECT * FROM users, pediatres WHERE pediatres.isAccepted = 0 AND users.login_user = pediatres.login_pediatre ORDER BY users.login_user";
         try {
             Statement statement = MyConnection.getInstance().createStatement();
             ResultSet resultat = statement.executeQuery(requete);
             while(resultat.next()){
                 Pediatre pediatre = new Pediatre();
-                Date sqlDate = resultat.getDate("Date_De_Naissance");
                 
-                pediatre.setLogin(resultat.getString("Login"));
+                pediatre.setLogin(resultat.getString("Login_user"));
                 pediatre.setCin(resultat.getString("CIN"));
                 pediatre.setNom(resultat.getString("Nom"));
                 pediatre.setPrenom(resultat.getString("Prenom"));
@@ -64,6 +64,8 @@ public class PediatreDAO {
                 pediatre.setNationalite(resultat.getString("Nationalite"));
                 pediatre.setSexe(resultat.getBoolean("Sexe"));
                 pediatre.setDoc(resultat.getString("Doc"));
+                pediatre.setAdress(resultat.getString("Adresse"));
+                pediatre.setTelephone(resultat.getString("Telephone"));
                 
                 listePediatres.add(pediatre);
             }
@@ -73,17 +75,17 @@ public class PediatreDAO {
             return null;
         }
     }
-    
+    //taha
     public static List<Pediatre> getPediatreList (String loginParent){
         List<Pediatre> listePediatres = new ArrayList<Pediatre>();
-        String requete = "SELECT Login, Nom, Prenom FROM users, favoris_pediatres WHERE login_parent=? and login_pediatre=login ";
+        String requete = "SELECT Login_user, Nom, Prenom FROM users, favoris_pediatres WHERE login_parent=? and login_pediatre=login_user";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, loginParent);
             ResultSet resultat = ps.executeQuery();
             while(resultat.next()){
                 Pediatre pediatre = new Pediatre();                
-                pediatre.setLogin(resultat.getString("Login"));
+                pediatre.setLogin(resultat.getString("Login_user"));
                 pediatre.setNom(resultat.getString("Nom"));
                 pediatre.setPrenom(resultat.getString("Prenom"));                
                 listePediatres.add(pediatre);
@@ -94,24 +96,25 @@ public class PediatreDAO {
             return null;
         }
     }
-
+    //taha
     public Pediatre findPediatreByString(String login) {
 
         Pediatre pediatre = new Pediatre();
-        String requete = "select * from Pediatres p, users u where p.login=? and u.login=p.login";
+        String requete = "select * from Pediatres p, users u where p.login_pediatre=? and u.login_user=p.login_pediatre";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, login);
             ResultSet resultat = ps.executeQuery();
             while (resultat.next())
             {
-                pediatre.setLogin(resultat.getString("Login"));
+                pediatre.setLogin(resultat.getString("Login_user"));
                 pediatre.setNom(resultat.getString("Nom"));
                 pediatre.setPrenom(resultat.getString("Prenom"));
                 pediatre.setEmail(resultat.getString("Email"));
                 pediatre.setSexe(resultat.getBoolean("Sexe"));
                 pediatre.setDateInscription(resultat.getDate("Date_Inscription"));
                 pediatre.setDateNaissance(resultat.getDate("Date_De_Naissance"));
+                System.out.println(pediatre.getDateNaissance());
                 pediatre.setNationalite(resultat.getString("Nationalite"));
                 pediatre.setAdress(resultat.getString("Adresse"));
                 pediatre.setTelephone(resultat.getString("Telephone"));
@@ -121,7 +124,6 @@ public class PediatreDAO {
                 pediatre.setNbTopic(new TopicDAO().countTopic(pediatre.getLogin()));
                 pediatre.setNbFavoris(countFavoris(pediatre.getLogin()));
                 pediatre.setArticle(new ArticleDAO().getOwnArticleList(pediatre.getLogin()));
-                
             }
             return pediatre;
         } catch (SQLException ex) {
@@ -130,7 +132,7 @@ public class PediatreDAO {
             return null;
         }
     }
-
+    //taha
     private int countFavoris(String login) {
         int nbFavoris=0;  
         String requete = "SELECT count(*) as nb FROM favoris_pediatres where Login_Pediatre=?";
@@ -150,7 +152,7 @@ public class PediatreDAO {
         
         return nbFavoris;        
     }
-
+    //taha
     private int calculEvaluation(String login) {
         int note;
         int sommeNote=0;
