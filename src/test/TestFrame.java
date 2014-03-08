@@ -6,6 +6,8 @@
 
 package test;
 
+import util.GradientPanel;
+import util.PdfGenerator;
 import java.awt.Color;
 import javax.swing.UIManager;
 import javax.swing.event.ChangeEvent;
@@ -67,7 +69,7 @@ public class TestFrame extends javax.swing.JFrame {
         ajoutPediatresContainer = new javax.swing.JPanel();
         ajoutPediatresContainer = new ContainerGradientPanel();
         jLabel2 = new javax.swing.JLabel();
-        ajoutPediatresPanel = new javax.swing.JPanel();
+        acceptPediatresPanel = new javax.swing.JPanel();
         ajoutRapportButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -142,22 +144,22 @@ public class TestFrame extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(39, 58, 138));
         jLabel2.setText("Traitements des demandes d'ajouts des nouveaux pédiatres");
 
-        ajoutPediatresPanel.setBackground(new java.awt.Color(255, 255, 255));
-        ajoutPediatresPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        acceptPediatresPanel.setBackground(new java.awt.Color(255, 255, 255));
+        acceptPediatresPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        javax.swing.GroupLayout ajoutPediatresPanelLayout = new javax.swing.GroupLayout(ajoutPediatresPanel);
-        ajoutPediatresPanel.setLayout(ajoutPediatresPanelLayout);
-        ajoutPediatresPanelLayout.setHorizontalGroup(
-            ajoutPediatresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout acceptPediatresPanelLayout = new javax.swing.GroupLayout(acceptPediatresPanel);
+        acceptPediatresPanel.setLayout(acceptPediatresPanelLayout);
+        acceptPediatresPanelLayout.setHorizontalGroup(
+            acceptPediatresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        ajoutPediatresPanelLayout.setVerticalGroup(
-            ajoutPediatresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        acceptPediatresPanelLayout.setVerticalGroup(
+            acceptPediatresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 409, Short.MAX_VALUE)
         );
 
-        ajoutPediatresPanel = new AjoutPediatres();
-        ajoutPediatresPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        acceptPediatresPanel = new AcceptPediatres();
+        acceptPediatresPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         ajoutRapportButton.setBackground(new java.awt.Color(255, 255, 255));
         ajoutRapportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/report icon.gif"))); // NOI18N
@@ -175,7 +177,7 @@ public class TestFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(ajoutPediatresContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ajoutPediatresContainerLayout.createSequentialGroup()
-                        .addComponent(ajoutPediatresPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(acceptPediatresPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ajoutRapportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(ajoutPediatresContainerLayout.createSequentialGroup()
@@ -190,7 +192,7 @@ public class TestFrame extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ajoutPediatresContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ajoutPediatresPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(acceptPediatresPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(ajoutPediatresContainerLayout.createSequentialGroup()
                         .addComponent(ajoutRapportButton)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -288,8 +290,8 @@ public class TestFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel acceptPediatresPanel;
     private javax.swing.JPanel ajoutPediatresContainer;
-    private javax.swing.JPanel ajoutPediatresPanel;
     private javax.swing.JButton ajoutRapportButton;
     private javax.swing.JPanel gestionUserPanel;
     private javax.swing.JPanel gestionUsersContainer;

@@ -15,11 +15,11 @@ import javax.swing.JOptionPane;
 import util.MyConnection;
 public class AdminDAO {
     static Administrateur admindao;
-    public static String log,pass,cin;
-    //public  static void main(String[] args){
+    public static String log,pass;
+    
+    //seif
     public void recuperer_admin(){
    
-
         String requete = "select * from admin";
         try {
            Statement statement = MyConnection.getInstance()
@@ -29,9 +29,9 @@ public class AdminDAO {
             while(resultat.next()){
                 admindao =new Administrateur();
                 admindao.setLogin(resultat.getString("login"));
-                admindao.setPassword(resultat.getString("passwd"));
+                admindao.setPwd(resultat.getString("passwd"));
                 log=admindao.getLogin();
-                pass=admindao.getPassword();
+                pass=admindao.getPwd();
                 
                 System.out.println(admindao.toString());
             }
@@ -42,12 +42,12 @@ public class AdminDAO {
             //return null;
         }
     }
-    
+    //seif
      public void updateMP(Administrateur d){
         String requete = "update admin set passwd=? where login=?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
-            ps.setString(1, d.getPassword());
+            ps.setString(1, d.getPwd());
             ps.setString(2, d.getLogin());
             ps.executeUpdate();
             System.out.println("");

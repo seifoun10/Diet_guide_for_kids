@@ -6,7 +6,7 @@
 
 package entities;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  *
@@ -102,5 +102,25 @@ public class User {
 
     public void setType(String type) {
         this.type = type;
+    }
+    
+    public User(String login, String pwd, String nom, String prenom, String email, boolean sexe, Date dateNaissance, String nationalite, Date dateInscription, String type) {
+        this.login = login;
+        this.pwd = pwd;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.sexe = sexe;
+        this.dateNaissance = dateNaissance;
+        this.nationalite = nationalite;
+        this.dateInscription = dateInscription;
+        this.type = type;
+    }
+
+    public User() {}
+
+    @Override
+    public String toString() {
+        return "User{" + "login=" + login + ", pwd=" + pwd + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", sexe=" + sexe + ", dateNaissance=" + dateNaissance + ", nationalite=" + nationalite + ", dateInscription=" + dateInscription + ", type=" + type;
     }
 }

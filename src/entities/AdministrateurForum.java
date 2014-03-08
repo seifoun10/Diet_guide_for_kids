@@ -11,15 +11,15 @@ import java.sql.Date;
 
 /**
  *
- * @author Admin
+ * @author Killer
  */
-public class Administrateur extends User {
+public class AdministrateurForum extends User {
     
-    public Administrateur(String login, String pwd, String nom, String prenom, String email, boolean sexe, Date dateNaissance, String nationalite, Date dateInscription, String type) {
+    public AdministrateurForum(String login, String pwd, String nom, String prenom, String email, boolean sexe, Date dateNaissance, String nationalite, Date dateInscription, String type) {
         super(login, pwd, nom, prenom, email, sexe, dateNaissance, nationalite, dateInscription, type);
     }
 
-    public Administrateur() {
+    public AdministrateurForum() {
         super();
     }
 

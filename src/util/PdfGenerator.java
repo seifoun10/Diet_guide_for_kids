@@ -1,4 +1,4 @@
-package test;
+package util;
 
 /*
  * To change this template, choose Tools | Templates

@@ -20,38 +20,40 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="refreshButton" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="validerButton" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPanel2" alignment="1" max="32767" attributes="0"/>
+                  <Component id="validerButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="reinitializeButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="refuserButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="accepterButton" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="reinitializeButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="refuserButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="accepterButton" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="selectionnePanel" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="contactButton" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="docsButton" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="selectionnePanel" alignment="0" min="-2" pref="272" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="selectionnePanel" min="-2" max="-2" attributes="1"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="contactButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="docsButton" min="-2" max="-2" attributes="0"/>
@@ -62,32 +64,23 @@
                           <Component id="reinitializeButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="jPanel2" max="32767" attributes="1"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jPanel2" max="32767" attributes="2"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="validerButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="refreshButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="validerButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="refreshButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="validerButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" resourceKey="validerButton.text"/>
-        <Property name="enabled" type="boolean" value="false"/>
-        <Property name="name" type="java.lang.String" value="validerButton" noResource="true"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="validerButtonvalidateOnClick"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="reinitializeButton">
       <Properties>
         <Property name="text" type="java.lang.String" resourceKey="reinitializeButton.text"/>
-        <Property name="toolTipText" type="java.lang.String" resourceKey="reinitializeButton.toolTipText"/>
         <Property name="enabled" type="boolean" value="false"/>
         <Property name="name" type="java.lang.String" value="reinitializeButton" noResource="true"/>
       </Properties>
@@ -100,10 +93,7 @@
         <Property name="background" type="java.awt.Color" resourceKey="selectionnePanel.background"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="P&#xe9;diatre selectionn&#xe9;">
-              <Property name="titleX" resourceKey="selectionnePanel.border.title"/>
-              <Property name="color" resourceKey="selectionnePanel.border.titleColor"/>
-            </TitledBorder>
+            <TitledBorder title="P&#xe9;diatre selectionn&#xe9;"/>
           </Border>
         </Property>
         <Property name="enabled" type="boolean" value="false"/>
@@ -113,7 +103,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" max="-2" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="logLab" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -124,46 +114,31 @@
                       <Component id="daILab" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="natLab" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="sexLab" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="adrLab" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="telLab" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="sexeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="nationaliteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="prenomLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="nomLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="loginLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="emailLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="dateNaissanceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="dateInscriptionLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="telephoneLabel" alignment="0" max="32767" attributes="1"/>
+                      <Component id="adresseLabel" alignment="0" max="32767" attributes="1"/>
+                      <Component id="sexeLabel" alignment="0" max="32767" attributes="1"/>
+                      <Component id="nationaliteLabel" alignment="0" max="32767" attributes="1"/>
+                      <Component id="dateInscriptionLabel" alignment="0" max="32767" attributes="1"/>
+                      <Component id="dateNaissanceLabel" alignment="0" max="32767" attributes="1"/>
+                      <Component id="emailLabel" alignment="0" max="32767" attributes="1"/>
+                      <Component id="prenomLabel" alignment="0" max="32767" attributes="1"/>
+                      <Component id="nomLabel" alignment="0" max="32767" attributes="1"/>
+                      <Component id="loginLabel" alignment="0" pref="160" max="32767" attributes="1"/>
                   </Group>
-                  <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="loginLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="nomLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="prenomLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="emailLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="dateNaissanceLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="26" pref="26" max="26" attributes="0"/>
-                          <Component id="nationaliteLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="sexeLabel" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="100" pref="100" max="100" attributes="0"/>
-                          <Component id="dateInscriptionLabel" min="-2" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="logLab" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -180,9 +155,34 @@
                           <Component id="natLab" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="sexLab" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="adrLab" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="telLab" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="loginLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="nomLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="prenomLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="emailLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="dateNaissanceLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="dateInscriptionLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="nationaliteLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="sexeLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="adresseLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="telephoneLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="14" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -190,7 +190,6 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="dateNaissanceLabel">
           <Properties>
-            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
             <Property name="text" type="java.lang.String" resourceKey="dateNaissanceLabel.text"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="dateNaissanceLabel" noResource="true"/>
@@ -198,7 +197,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="emailLabel">
           <Properties>
-            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
             <Property name="text" type="java.lang.String" resourceKey="emailLabel.text"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="emailLabel" noResource="true"/>
@@ -206,7 +204,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="loginLabel">
           <Properties>
-            <Property name="font" type="java.awt.Font" resourceKey="loginLabel.font"/>
             <Property name="text" type="java.lang.String" resourceKey="loginLabel.text"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="loginLabel" noResource="true"/>
@@ -214,7 +211,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="nomLabel">
           <Properties>
-            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
             <Property name="text" type="java.lang.String" resourceKey="nomLabel.text"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="nomLabel" noResource="true"/>
@@ -222,7 +218,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="prenomLabel">
           <Properties>
-            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
             <Property name="text" type="java.lang.String" resourceKey="prenomLabel.text"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="prenomLabel" noResource="true"/>
@@ -230,7 +225,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="nationaliteLabel">
           <Properties>
-            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
             <Property name="text" type="java.lang.String" resourceKey="nationaliteLabel.text"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="nationaliteLabel" noResource="true"/>
@@ -238,7 +232,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="sexeLabel">
           <Properties>
-            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
             <Property name="text" type="java.lang.String" resourceKey="sexeLabel.text"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="sexeLabel" noResource="true"/>
@@ -246,7 +239,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="dateInscriptionLabel">
           <Properties>
-            <Property name="font" type="java.awt.Font" resourceKey="nationaliteLabel.font"/>
             <Property name="text" type="java.lang.String" resourceKey="dateInscriptionLabel.text"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="dateInscriptionLabel" noResource="true"/>
@@ -316,12 +308,41 @@
             <Property name="name" type="java.lang.String" value="sexLab" noResource="true"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JLabel" name="adrLab">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="adrLab.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="adrLab.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="adrLab" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="telLab">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="telLab.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="telLab.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="telLab" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="adresseLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="adresseLabel.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="adresseLabel" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="telephoneLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="telephoneLabel.text"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="telephoneLabel" noResource="true"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JButton" name="refuserButton">
       <Properties>
         <Property name="text" type="java.lang.String" resourceKey="refuserButton.text"/>
-        <Property name="toolTipText" type="java.lang.String" resourceKey="refuserButton.toolTipText"/>
         <Property name="enabled" type="boolean" value="false"/>
         <Property name="name" type="java.lang.String" value="refuserButton" noResource="true"/>
       </Properties>
@@ -332,7 +353,6 @@
     <Component class="javax.swing.JButton" name="accepterButton">
       <Properties>
         <Property name="text" type="java.lang.String" resourceKey="accepterButton.text"/>
-        <Property name="toolTipText" type="java.lang.String" resourceKey="accepterButton.toolTipText"/>
         <Property name="enabled" type="boolean" value="false"/>
         <Property name="name" type="java.lang.String" value="accepterButton" noResource="true"/>
       </Properties>
@@ -343,25 +363,12 @@
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="GestionPediatreView_accepterButton"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="contactButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" resourceKey="contactButton.text"/>
-        <Property name="enabled" type="boolean" value="false"/>
-        <Property name="name" type="java.lang.String" value="contactButton" noResource="true"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contactButtoncontactOnClick"/>
-      </Events>
-    </Component>
     <Container class="javax.swing.JPanel" name="jPanel2">
       <Properties>
         <Property name="background" type="java.awt.Color" resourceKey="jPanel2.background"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Liste des demandes d&apos;ajouts des p&#xe9;diatres">
-              <Property name="titleX" resourceKey="jPanel2.border.title"/>
-              <Property name="color" resourceKey="jPanel2.border.titleColor"/>
-            </TitledBorder>
+            <TitledBorder title="Liste des demandes d&apos;ajouts des p&#xe9;diatres"/>
           </Border>
         </Property>
         <Property name="name" type="java.lang.String" value="jPanel2" noResource="true"/>
@@ -370,7 +377,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jScrollPane1" alignment="0" pref="682" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" alignment="0" pref="645" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="statesCount" min="-2" max="-2" attributes="0"/>
@@ -380,9 +387,10 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <Component id="jScrollPane1" pref="258" max="32767" attributes="1"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="214" max="32767" attributes="2"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="statesCount" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -402,7 +410,7 @@
               <Properties>
                 <Property name="autoCreateRowSorter" type="boolean" value="true"/>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="pediatresTM = new gestionpediatre.AjoutPediatresTableModel(listePediatresTable)" type="code"/>
+                  <Connection code="pediatresTM = new gestionpediatre.AcceptPediatresTableModel(listePediatresTable)" type="code"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Curseur par d&#xe9;faut"/>
@@ -447,6 +455,26 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="docsButtondocConsultOnClick"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="contactButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="contactButton.text"/>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="name" type="java.lang.String" value="contactButton" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contactButtoncontactOnClick"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="validerButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="validerButton.text"/>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="name" type="java.lang.String" value="validerButton" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="validerButtonvalidateOnClick"/>
       </Events>
     </Component>
   </SubComponents>

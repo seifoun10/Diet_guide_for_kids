@@ -4,7 +4,7 @@
  */
 
 /*
- * AjoutPediatres.java
+ * AcceptPediatres.java
  *
  * Created on 1 mars 2014, 19:42:34
  */
@@ -21,12 +21,12 @@ import javax.swing.JOptionPane;
  *
  * @author Killer
  */
-public class AjoutPediatres extends javax.swing.JPanel {
-    AjoutPediatresTableModel pediatresTM;
+public class AcceptPediatres extends javax.swing.JPanel {
+    AcceptPediatresTableModel pediatresTM;
     SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
 
-    /** Creates new form AjoutPediatres */
-    public AjoutPediatres() {
+    /** Creates new form AcceptPediatres */
+    public AcceptPediatres() {
         initComponents();
     }
 
@@ -39,7 +39,6 @@ public class AjoutPediatres extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        validerButton = new javax.swing.JButton();
         reinitializeButton = new javax.swing.JButton();
         selectionnePanel = new javax.swing.JPanel();
         dateNaissanceLabel = new javax.swing.JLabel();
@@ -58,31 +57,26 @@ public class AjoutPediatres extends javax.swing.JPanel {
         daILab = new javax.swing.JLabel();
         natLab = new javax.swing.JLabel();
         sexLab = new javax.swing.JLabel();
+        adrLab = new javax.swing.JLabel();
+        telLab = new javax.swing.JLabel();
+        adresseLabel = new javax.swing.JLabel();
+        telephoneLabel = new javax.swing.JLabel();
         refuserButton = new javax.swing.JButton();
         accepterButton = new javax.swing.JButton();
-        contactButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listePediatresTable = new javax.swing.JTable();
         statesCount = new javax.swing.JLabel();
         refreshButton = new javax.swing.JButton();
         docsButton = new javax.swing.JButton();
+        contactButton = new javax.swing.JButton();
+        validerButton = new javax.swing.JButton();
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(gestionpediatre.GestionPediatreApp.class).getContext().getResourceMap(AjoutPediatres.class);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(gestionpediatre.GestionPediatreApp.class).getContext().getResourceMap(AcceptPediatres.class);
         setBackground(resourceMap.getColor("Form.background")); // NOI18N
         setName("Form"); // NOI18N
 
-        validerButton.setText(resourceMap.getString("validerButton.text")); // NOI18N
-        validerButton.setEnabled(false);
-        validerButton.setName("validerButton"); // NOI18N
-        validerButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                validerButtonvalidateOnClick(evt);
-            }
-        });
-
         reinitializeButton.setText(resourceMap.getString("reinitializeButton.text")); // NOI18N
-        reinitializeButton.setToolTipText(resourceMap.getString("reinitializeButton.toolTipText")); // NOI18N
         reinitializeButton.setEnabled(false);
         reinitializeButton.setName("reinitializeButton"); // NOI18N
         reinitializeButton.addActionListener(new java.awt.event.ActionListener() {
@@ -92,46 +86,38 @@ public class AjoutPediatres extends javax.swing.JPanel {
         });
 
         selectionnePanel.setBackground(resourceMap.getColor("selectionnePanel.background")); // NOI18N
-        selectionnePanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, resourceMap.getString("selectionnePanel.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, resourceMap.getColor("selectionnePanel.border.titleColor"))); // NOI18N
+        selectionnePanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Pédiatre selectionné"));
         selectionnePanel.setEnabled(false);
         selectionnePanel.setName("selectionnePanel"); // NOI18N
 
-        dateNaissanceLabel.setFont(resourceMap.getFont("nationaliteLabel.font")); // NOI18N
         dateNaissanceLabel.setText(resourceMap.getString("dateNaissanceLabel.text")); // NOI18N
         dateNaissanceLabel.setEnabled(false);
         dateNaissanceLabel.setName("dateNaissanceLabel"); // NOI18N
 
-        emailLabel.setFont(resourceMap.getFont("nationaliteLabel.font")); // NOI18N
         emailLabel.setText(resourceMap.getString("emailLabel.text")); // NOI18N
         emailLabel.setEnabled(false);
         emailLabel.setName("emailLabel"); // NOI18N
 
-        loginLabel.setFont(resourceMap.getFont("loginLabel.font")); // NOI18N
         loginLabel.setText(resourceMap.getString("loginLabel.text")); // NOI18N
         loginLabel.setEnabled(false);
         loginLabel.setName("loginLabel"); // NOI18N
 
-        nomLabel.setFont(resourceMap.getFont("nationaliteLabel.font")); // NOI18N
         nomLabel.setText(resourceMap.getString("nomLabel.text")); // NOI18N
         nomLabel.setEnabled(false);
         nomLabel.setName("nomLabel"); // NOI18N
 
-        prenomLabel.setFont(resourceMap.getFont("nationaliteLabel.font")); // NOI18N
         prenomLabel.setText(resourceMap.getString("prenomLabel.text")); // NOI18N
         prenomLabel.setEnabled(false);
         prenomLabel.setName("prenomLabel"); // NOI18N
 
-        nationaliteLabel.setFont(resourceMap.getFont("nationaliteLabel.font")); // NOI18N
         nationaliteLabel.setText(resourceMap.getString("nationaliteLabel.text")); // NOI18N
         nationaliteLabel.setEnabled(false);
         nationaliteLabel.setName("nationaliteLabel"); // NOI18N
 
-        sexeLabel.setFont(resourceMap.getFont("nationaliteLabel.font")); // NOI18N
         sexeLabel.setText(resourceMap.getString("sexeLabel.text")); // NOI18N
         sexeLabel.setEnabled(false);
         sexeLabel.setName("sexeLabel"); // NOI18N
 
-        dateInscriptionLabel.setFont(resourceMap.getFont("nationaliteLabel.font")); // NOI18N
         dateInscriptionLabel.setText(resourceMap.getString("dateInscriptionLabel.text")); // NOI18N
         dateInscriptionLabel.setEnabled(false);
         dateInscriptionLabel.setName("dateInscriptionLabel"); // NOI18N
@@ -176,6 +162,24 @@ public class AjoutPediatres extends javax.swing.JPanel {
         sexLab.setEnabled(false);
         sexLab.setName("sexLab"); // NOI18N
 
+        adrLab.setFont(resourceMap.getFont("adrLab.font")); // NOI18N
+        adrLab.setText(resourceMap.getString("adrLab.text")); // NOI18N
+        adrLab.setEnabled(false);
+        adrLab.setName("adrLab"); // NOI18N
+
+        telLab.setFont(resourceMap.getFont("telLab.font")); // NOI18N
+        telLab.setText(resourceMap.getString("telLab.text")); // NOI18N
+        telLab.setEnabled(false);
+        telLab.setName("telLab"); // NOI18N
+
+        adresseLabel.setText(resourceMap.getString("adresseLabel.text")); // NOI18N
+        adresseLabel.setEnabled(false);
+        adresseLabel.setName("adresseLabel"); // NOI18N
+
+        telephoneLabel.setText(resourceMap.getString("telephoneLabel.text")); // NOI18N
+        telephoneLabel.setEnabled(false);
+        telephoneLabel.setName("telephoneLabel"); // NOI18N
+
         javax.swing.GroupLayout selectionnePanelLayout = new javax.swing.GroupLayout(selectionnePanel);
         selectionnePanel.setLayout(selectionnePanelLayout);
         selectionnePanelLayout.setHorizontalGroup(
@@ -190,41 +194,28 @@ public class AjoutPediatres extends javax.swing.JPanel {
                     .addComponent(daNLab)
                     .addComponent(daILab)
                     .addComponent(natLab)
-                    .addComponent(sexLab))
-                .addGap(22, 22, 22)
-                .addGroup(selectionnePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sexeLabel)
-                    .addComponent(nationaliteLabel)
-                    .addComponent(prenomLabel)
-                    .addComponent(nomLabel)
-                    .addComponent(loginLabel)
-                    .addComponent(emailLabel)
-                    .addComponent(dateNaissanceLabel)
-                    .addComponent(dateInscriptionLabel))
-                .addGap(126, 126, 126))
+                    .addComponent(sexLab)
+                    .addComponent(adrLab)
+                    .addComponent(telLab))
+                .addGap(18, 18, 18)
+                .addGroup(selectionnePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(telephoneLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(adresseLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(sexeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nationaliteLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dateInscriptionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dateNaissanceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(emailLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(prenomLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nomLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(loginLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         selectionnePanelLayout.setVerticalGroup(
             selectionnePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(selectionnePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(selectionnePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(selectionnePanelLayout.createSequentialGroup()
-                        .addComponent(loginLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nomLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(prenomLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(emailLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dateNaissanceLabel)
-                        .addGap(26, 26, 26)
-                        .addComponent(nationaliteLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sexeLabel))
-                    .addGroup(selectionnePanelLayout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(dateInscriptionLabel))
                     .addGroup(selectionnePanelLayout.createSequentialGroup()
                         .addComponent(logLab)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -240,12 +231,35 @@ public class AjoutPediatres extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(natLab)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sexLab)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                        .addComponent(sexLab)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(adrLab)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(telLab))
+                    .addGroup(selectionnePanelLayout.createSequentialGroup()
+                        .addComponent(loginLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(prenomLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(emailLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dateNaissanceLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dateInscriptionLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nationaliteLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sexeLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(adresseLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(telephoneLabel)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         refuserButton.setText(resourceMap.getString("refuserButton.text")); // NOI18N
-        refuserButton.setToolTipText(resourceMap.getString("refuserButton.toolTipText")); // NOI18N
         refuserButton.setEnabled(false);
         refuserButton.setName("refuserButton"); // NOI18N
         refuserButton.addActionListener(new java.awt.event.ActionListener() {
@@ -255,7 +269,6 @@ public class AjoutPediatres extends javax.swing.JPanel {
         });
 
         accepterButton.setText(resourceMap.getString("accepterButton.text")); // NOI18N
-        accepterButton.setToolTipText(resourceMap.getString("accepterButton.toolTipText")); // NOI18N
         accepterButton.setEnabled(false);
         accepterButton.setName("accepterButton"); // NOI18N
         accepterButton.addActionListener(new java.awt.event.ActionListener() {
@@ -264,23 +277,14 @@ public class AjoutPediatres extends javax.swing.JPanel {
             }
         });
 
-        contactButton.setText(resourceMap.getString("contactButton.text")); // NOI18N
-        contactButton.setEnabled(false);
-        contactButton.setName("contactButton"); // NOI18N
-        contactButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contactButtoncontactOnClick(evt);
-            }
-        });
-
         jPanel2.setBackground(resourceMap.getColor("jPanel2.background")); // NOI18N
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, resourceMap.getString("jPanel2.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, resourceMap.getColor("jPanel2.border.titleColor"))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Liste des demandes d'ajouts des pédiatres"));
         jPanel2.setName("jPanel2"); // NOI18N
 
         jScrollPane1.setName("jScrollPane1"); // NOI18N
 
         listePediatresTable.setAutoCreateRowSorter(true);
-        listePediatresTable.setModel(pediatresTM = new gestionpediatre.AjoutPediatresTableModel(listePediatresTable));
+        listePediatresTable.setModel(pediatresTM = new gestionpediatre.AcceptPediatresTableModel(listePediatresTable));
         listePediatresTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         listePediatresTable.setName("listePediatresTable"); // NOI18N
         listePediatresTable.getTableHeader().setReorderingAllowed(false);
@@ -312,7 +316,7 @@ public class AjoutPediatres extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(statesCount))
@@ -320,9 +324,10 @@ public class AjoutPediatres extends javax.swing.JPanel {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(statesCount))
+                .addComponent(statesCount)
+                .addContainerGap())
         );
 
         refreshButton.setText(resourceMap.getString("refreshButton.text")); // NOI18N
@@ -342,37 +347,56 @@ public class AjoutPediatres extends javax.swing.JPanel {
             }
         });
 
+        contactButton.setText(resourceMap.getString("contactButton.text")); // NOI18N
+        contactButton.setEnabled(false);
+        contactButton.setName("contactButton"); // NOI18N
+        contactButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contactButtoncontactOnClick(evt);
+            }
+        });
+
+        validerButton.setText(resourceMap.getString("validerButton.text")); // NOI18N
+        validerButton.setEnabled(false);
+        validerButton.setName("validerButton"); // NOI18N
+        validerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                validerButtonvalidateOnClick(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(refreshButton)
-                    .addComponent(validerButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(refreshButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(validerButton, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(reinitializeButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(refuserButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(accepterButton))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(reinitializeButton)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(refuserButton)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(accepterButton))
+                        .addComponent(selectionnePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(contactButton)
-                    .addComponent(docsButton)
-                    .addComponent(selectionnePanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(docsButton))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(selectionnePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(contactButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(docsButton)
@@ -381,11 +405,12 @@ public class AjoutPediatres extends javax.swing.JPanel {
                             .addComponent(accepterButton)
                             .addComponent(refuserButton)
                             .addComponent(reinitializeButton)))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(validerButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(refreshButton)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(validerButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(refreshButton)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -472,10 +497,13 @@ private void refreshButtonrefreshOnClick(java.awt.event.ActionEvent evt) {//GEN-
 
 private void docsButtondocConsultOnClick(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docsButtondocConsultOnClick
 // TODO add your handling code here:
+    
 }//GEN-LAST:event_docsButtondocConsultOnClick
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton accepterButton;
+    private javax.swing.JLabel adrLab;
+    private javax.swing.JLabel adresseLabel;
     private javax.swing.JButton contactButton;
     private javax.swing.JLabel daILab;
     private javax.swing.JLabel daNLab;
@@ -502,6 +530,8 @@ private void docsButtondocConsultOnClick(java.awt.event.ActionEvent evt) {//GEN-
     private javax.swing.JLabel sexLab;
     private javax.swing.JLabel sexeLabel;
     private javax.swing.JLabel statesCount;
+    private javax.swing.JLabel telLab;
+    private javax.swing.JLabel telephoneLabel;
     private javax.swing.JButton validerButton;
     // End of variables declaration//GEN-END:variables
     
@@ -524,12 +554,14 @@ private void docsButtondocConsultOnClick(java.awt.event.ActionEvent evt) {//GEN-
         dateInscriptionLabel.setText(formater.format(pediatre.getDateInscription()));
         nationaliteLabel.setText(pediatre.getNationalite());
         sexeLabel.setText(pediatre.isSexe()?"Homme":"Femme");
+        adresseLabel.setText(pediatre.getAdresse());
+        telephoneLabel.setText(pediatre.getTelephone());
     }
     
     public void refreshTable(){
         //rafraichissement de la table : population via la base
-        listePediatresTable.setModel(new AjoutPediatresTableModel(listePediatresTable));
-        pediatresTM = (AjoutPediatresTableModel) listePediatresTable.getModel();
+        listePediatresTable.setModel(new AcceptPediatresTableModel(listePediatresTable));
+        pediatresTM = (AcceptPediatresTableModel) listePediatresTable.getModel();
     }
     
     public void validateTreatment(){
@@ -554,6 +586,8 @@ private void docsButtondocConsultOnClick(java.awt.event.ActionEvent evt) {//GEN-
             daILab.setEnabled(true);
             natLab.setEnabled(true);
             sexLab.setEnabled(true);
+            adrLab.setEnabled(true);
+            telLab.setEnabled(true);
 
             loginLabel.setEnabled(true);
             nomLabel.setEnabled(true);
@@ -563,6 +597,8 @@ private void docsButtondocConsultOnClick(java.awt.event.ActionEvent evt) {//GEN-
             dateInscriptionLabel.setEnabled(true);
             nationaliteLabel.setEnabled(true);
             sexeLabel.setEnabled(true);
+            adresseLabel.setEnabled(true);
+            telephoneLabel.setEnabled(true);
 
             //accepterButton
             if(!listePediatresTable.getValueAt(listePediatresTable.getSelectedRow(), 4).equals("Acceptée"))
@@ -597,6 +633,8 @@ private void docsButtondocConsultOnClick(java.awt.event.ActionEvent evt) {//GEN-
             daILab.setEnabled(false);
             natLab.setEnabled(false);
             sexLab.setEnabled(false);
+            adrLab.setEnabled(false);
+            telLab.setEnabled(false);
 
             loginLabel.setEnabled(false);
             nomLabel.setEnabled(false);
@@ -606,6 +644,8 @@ private void docsButtondocConsultOnClick(java.awt.event.ActionEvent evt) {//GEN-
             dateInscriptionLabel.setEnabled(false);
             nationaliteLabel.setEnabled(false);
             sexeLabel.setEnabled(false);
+            adresseLabel.setEnabled(false);
+            telephoneLabel.setEnabled(false);
 
             accepterButton.setEnabled(false);
             refuserButton.setEnabled(false);
@@ -621,6 +661,8 @@ private void docsButtondocConsultOnClick(java.awt.event.ActionEvent evt) {//GEN-
             dateInscriptionLabel.setText("-");
             nationaliteLabel.setText("-");
             sexeLabel.setText("-");
+            adresseLabel.setText("-");
+            telephoneLabel.setText("-");
         }
         
         //si au moin un des pédiatres est refusée ou accepté le bouton d'acceptation se met en enabled
@@ -642,6 +684,12 @@ private void docsButtondocConsultOnClick(java.awt.event.ActionEvent evt) {//GEN-
         statesCount.setText(pediatresTM.countAccepted() +" acceptée(s) et "
                 + pediatresTM.countRefused() + " refusée(s) sur "
                 + listePediatresTable.getRowCount());
+    }
+    
+    public String getInfo(){
+        if(listePediatresTable.getSelectedRow() < 0)
+            return null;
+        return (String) listePediatresTable.getValueAt(listePediatresTable.getSelectedRow(), 4);
     }
 }
 
