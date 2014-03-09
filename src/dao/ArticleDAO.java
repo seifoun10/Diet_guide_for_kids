@@ -18,10 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- *
- * @author tictacf12
- */
+
 public class ArticleDAO {
     
     public List<Article> getArticleList (String loginParent){
@@ -32,7 +29,8 @@ public class ArticleDAO {
             ps.setString(1, loginParent);
             ResultSet resultat = ps.executeQuery();
             while(resultat.next()){
-                Article article = new Article();
+                Article article;
+                article= new Article();
                 article.setId(resultat.getInt("a.Id_Article"));
                 article.setTitre(resultat.getString("Titre"));
                 article.setAuteur(resultat.getString("Auteur"));
