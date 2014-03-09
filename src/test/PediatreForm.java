@@ -90,12 +90,16 @@ public class PediatreForm extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         nbLectureL = new javax.swing.JLabel();
+        supArticleButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jTabbedPane1.setMaximumSize(null);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        adresseL.setBackground(new java.awt.Color(255, 255, 255));
         adresseL.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Informations générales"));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -150,7 +154,7 @@ public class PediatreForm extends javax.swing.JFrame {
         jLabel11.setText("Adresse de travail");
 
         adressL.setText("-");
-        if(pediatre.getAdress()!=null) adressL.setText(pediatre.getAdress());
+        if(pediatre.getAdresse()!=null) adressL.setText(pediatre.getAdresse());
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel10.setText("Evaluation");
@@ -266,6 +270,7 @@ public class PediatreForm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Informations du compte"));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -352,6 +357,9 @@ public class PediatreForm extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Information personnelles", jPanel3);
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Informations des Articles"));
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -445,7 +453,7 @@ public class PediatreForm extends javax.swing.JFrame {
                             .addComponent(nbFavorisL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jLabel31)
                     .addComponent(jLabel30))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -482,13 +490,24 @@ public class PediatreForm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        supArticleButton.setText("Supprimer article");
+        supArticleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supArticleButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(supArticleButton)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -496,7 +515,9 @@ public class PediatreForm extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(276, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(supArticleButton)
+                .addContainerGap(235, Short.MAX_VALUE))
         );
 
         if(!pediatre.getArticle().isEmpty())
@@ -531,6 +552,11 @@ public class PediatreForm extends javax.swing.JFrame {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_idArticleCBPropertyChange
+
+    private void supArticleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supArticleButtonActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_supArticleButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -619,6 +645,7 @@ public class PediatreForm extends javax.swing.JFrame {
     private javax.swing.JLabel noteArticle;
     private javax.swing.JLabel prenomL;
     private javax.swing.JLabel sexeL;
+    private javax.swing.JButton supArticleButton;
     private javax.swing.JLabel telephoneL;
     private javax.swing.JLabel titreArticleL;
     private javax.swing.JLabel typeArticleL;

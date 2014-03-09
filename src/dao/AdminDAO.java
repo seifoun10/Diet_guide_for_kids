@@ -50,7 +50,6 @@ public class AdminDAO {
             ps.setString(1, d.getPwd());
             ps.setString(2, d.getLogin());
             ps.executeUpdate();
-            System.out.println("");
             JOptionPane.showMessageDialog(null, "modification mot de passe avec succès","Mot de passe",1);
         } catch (SQLException ex) {
            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -58,6 +57,35 @@ public class AdminDAO {
             JOptionPane.showMessageDialog(null, "Vous n'êtes pas connecté sur la machine qui contien la base","",1);
         }
     }
-//}
+     
+     public Administrateur findAdministrateurByString(String login) {
+        Administrateur admin = new Administrateur();
+     String requete = "select * from admins p, users u where p.login=? and u.login=p.login";
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setString(1, login);
+            ResultSet resultat = ps.executeQuery();
+            
+            while (resultat.next())
+            {
+                admin.setLogin(resultat.getString("Login"));
+                admin.setNom(resultat.getString("Nom"));
+                admin.setPrenom(resultat.getString("Prenom"));
+                admin.setEmail(resultat.getString("Email"));
+                admin.setSexe(resultat.getBoolean("Sexe"));
+                admin.setDateInscription(resultat.getDate("Date_Inscription"));
+                admin.setDateNaissance(resultat.getDate("Date_De_Naissance"));
+                admin.setNationalite(resultat.getString("Nationalite"));
+                admin.setCin(resultat.getString("Cin"));
+                
+            }
+            return admin;
+
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la recherche du parent "+ex.getMessage());
+            return null;
+        }
+    }
 
 }

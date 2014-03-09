@@ -163,6 +163,11 @@ public class TestFrame extends javax.swing.JFrame {
 
         ajoutRapportButton.setBackground(new java.awt.Color(255, 255, 255));
         ajoutRapportButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/report icon.gif"))); // NOI18N
+        ajoutRapportButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ajoutRapportButtonMouseClicked(evt);
+            }
+        });
         ajoutRapportButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ajoutRapportButtonActionPerformed(evt);
@@ -259,6 +264,10 @@ public class TestFrame extends javax.swing.JFrame {
     private void ajoutRapportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajoutRapportButtonActionPerformed
         PdfGenerator.generatePdf();
     }//GEN-LAST:event_ajoutRapportButtonActionPerformed
+
+    private void ajoutRapportButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajoutRapportButtonMouseClicked
+                
+    }//GEN-LAST:event_ajoutRapportButtonMouseClicked
 
     /**
      * @param args the command line arguments

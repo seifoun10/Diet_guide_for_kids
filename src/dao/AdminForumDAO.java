@@ -6,7 +6,7 @@
 
 package dao;
 
-import entities.AdminForum;
+import entities.AdministrateurForum;
 import entities.Administrateur;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,8 +19,8 @@ import util.MyConnection;
  */
 public class AdminForumDAO {
 
-    public AdminForum findAdminForumByString(String login) {
-        AdminForum adminF = new AdminForum();
+    public AdministrateurForum findAdminForumByString(String login) {
+        AdministrateurForum adminF = new AdministrateurForum();
         String requete = "select * from admin_forum af, users u where af.login=? and u.login=af.login";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);

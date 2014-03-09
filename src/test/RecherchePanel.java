@@ -6,7 +6,9 @@
 
 package test;
 
-import gui.MyTableModel;
+import dao.UserDAO;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,7 +18,6 @@ public class RecherchePanel extends javax.swing.JPanel {
 
     Boolean sexe=null;
     String type="Admin Forum Parent Pediatre ";
-    
     /**
      * Creates new form RecherchePanel
      */
@@ -33,79 +34,38 @@ public class RecherchePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        sexeBG = new javax.swing.ButtonGroup();
+        dateNaissanceDP = new org.jdesktop.swingx.JXDatePicker();
+        dateInscriptionDP = new org.jdesktop.swingx.JXDatePicker();
+        supprimerB = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        emailTF = new javax.swing.JTextField();
+        viderChampsB = new javax.swing.JButton();
+        consulterB = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         pediatreCB = new javax.swing.JCheckBox();
-        nomTF = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        prenomTF = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        nomTF = new javax.swing.JTextField();
+        adminCB = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         rechercheT = new javax.swing.JTable();
-        dateInscriptionDP = new org.jdesktop.swingx.JXDatePicker();
-        dateNaissanceDP = new org.jdesktop.swingx.JXDatePicker();
-        jButton3 = new javax.swing.JButton();
-        emailTF = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        prenomTF = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        femmeRB = new javax.swing.JRadioButton();
-        nationnaliteTF = new javax.swing.JTextField();
-        hommeRB = new javax.swing.JRadioButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        loginTF = new javax.swing.JTextField();
-        tousRB = new javax.swing.JRadioButton();
         jLabel9 = new javax.swing.JLabel();
-        adminCB = new javax.swing.JCheckBox();
-        forumCB = new javax.swing.JCheckBox();
         parentCB = new javax.swing.JCheckBox();
+        forumCB = new javax.swing.JCheckBox();
+        loginTF = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        nationnaliteTF = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        hommeRB = new javax.swing.JRadioButton();
+        femmeRB = new javax.swing.JRadioButton();
+        tousRB = new javax.swing.JRadioButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton2.setText("Consulter le profil");
-
-        jButton1.setText("Vider les champs");
-        jButton1.setToolTipText("");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setText("Prénom");
-
-        pediatreCB.setSelected(true);
-        pediatreCB.setText("Pédiatre");
-        pediatreCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pediatreCBActionPerformed(evt);
-            }
-        });
-
-        nomTF.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                nomTFKeyReleased(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setText("Nom");
-
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
-        jScrollPane1.setViewportView(rechercheT);
-
-        dateInscriptionDP.setBackground(java.awt.Color.white);
-        dateInscriptionDP.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                dateInscriptionDPPropertyChange(evt);
-            }
-        });
-
-        dateNaissanceDP.setBackground(java.awt.Color.white);
         dateNaissanceDP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dateNaissanceDPActionPerformed(evt);
@@ -117,7 +77,22 @@ public class RecherchePanel extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setText("Supprimer le profil");
+        dateInscriptionDP.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                dateInscriptionDPPropertyChange(evt);
+            }
+        });
+
+        supprimerB.setText("Supprimer le profil");
+        supprimerB.setEnabled(false);
+        supprimerB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supprimerBActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setText("Date d'inscription");
 
         emailTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -125,8 +100,38 @@ public class RecherchePanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel5.setText("Date d'inscription");
+        viderChampsB.setText("Vider les champs");
+        viderChampsB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viderChampsBActionPerformed(evt);
+            }
+        });
+
+        consulterB.setText("Consulter le profil");
+        consulterB.setEnabled(false);
+        consulterB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consulterBActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setText("Date de Naissance");
+
+        pediatreCB.setBackground(new java.awt.Color(255, 255, 255));
+        pediatreCB.setSelected(true);
+        pediatreCB.setText("Pédiatre");
+        pediatreCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pediatreCBActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setText("Nom");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setText("E-mail");
 
         prenomTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -134,40 +139,75 @@ public class RecherchePanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setText("Email");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setText("Prenom");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel7.setText("Nationalité");
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setText("Date de Naissance");
-
-        femmeRB.setText("Femme");
-        femmeRB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                femmeRBActionPerformed(evt);
-            }
-        });
-
-        nationnaliteTF.addKeyListener(new java.awt.event.KeyAdapter() {
+        nomTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                nationnaliteTFKeyReleased(evt);
+                nomTFKeyReleased(evt);
             }
         });
 
-        hommeRB.setText("Homme");
-        hommeRB.addActionListener(new java.awt.event.ActionListener() {
+        adminCB.setBackground(new java.awt.Color(255, 255, 255));
+        adminCB.setSelected(true);
+        adminCB.setText("Administrateur");
+        adminCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hommeRBActionPerformed(evt);
+                adminCBActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel1.setText("Login");
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+        rechercheT.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        rechercheT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rechercheTMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                rechercheTMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                rechercheTMouseReleased(evt);
+            }
+        });
+        rechercheT.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                rechercheTMouseDragged(evt);
+            }
+        });
+        rechercheT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                rechercheTKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                rechercheTKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                rechercheTKeyTyped(evt);
+            }
+        });
+        jScrollPane1.setViewportView(rechercheT);
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel8.setText("Sexe");
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel9.setText("Type");
+
+        parentCB.setBackground(new java.awt.Color(255, 255, 255));
+        parentCB.setSelected(true);
+        parentCB.setText("Parent");
+        parentCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                parentCBActionPerformed(evt);
+            }
+        });
+
+        forumCB.setBackground(new java.awt.Color(255, 255, 255));
+        forumCB.setSelected(true);
+        forumCB.setText("Administrateur forum");
+        forumCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                forumCBActionPerformed(evt);
+            }
+        });
 
         loginTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,6 +226,38 @@ public class RecherchePanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setText("Login");
+
+        nationnaliteTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nationnaliteTFKeyReleased(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setText("Nationnalité");
+
+        hommeRB.setBackground(new java.awt.Color(255, 255, 255));
+        sexeBG.add(hommeRB);
+        hommeRB.setText("Homme");
+        hommeRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hommeRBActionPerformed(evt);
+            }
+        });
+
+        femmeRB.setBackground(new java.awt.Color(255, 255, 255));
+        sexeBG.add(femmeRB);
+        femmeRB.setText("Femme");
+        femmeRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                femmeRBActionPerformed(evt);
+            }
+        });
+
+        tousRB.setBackground(new java.awt.Color(255, 255, 255));
+        sexeBG.add(tousRB);
         tousRB.setSelected(true);
         tousRB.setText("Tous");
         tousRB.addActionListener(new java.awt.event.ActionListener() {
@@ -194,32 +266,8 @@ public class RecherchePanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel9.setText("Type");
-
-        adminCB.setSelected(true);
-        adminCB.setText("Administrateur");
-        adminCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminCBActionPerformed(evt);
-            }
-        });
-
-        forumCB.setSelected(true);
-        forumCB.setText("Administrateur forum");
-        forumCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                forumCBActionPerformed(evt);
-            }
-        });
-
-        parentCB.setSelected(true);
-        parentCB.setText("Parent");
-        parentCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                parentCBActionPerformed(evt);
-            }
-        });
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel8.setText("Sexe");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -227,54 +275,55 @@ public class RecherchePanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel5))
-                        .addGap(4, 4, 4)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(pediatreCB)
-                            .addComponent(parentCB)
-                            .addComponent(forumCB)
-                            .addComponent(adminCB)
-                            .addComponent(nomTF)
-                            .addComponent(prenomTF)
-                            .addComponent(emailTF)
-                            .addComponent(dateInscriptionDP, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(hommeRB)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(femmeRB)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tousRB))
-                            .addComponent(dateNaissanceDP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(nationnaliteTF)
-                            .addComponent(loginTF)))
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel4)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(viderChampsB)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel5))
+                            .addGap(4, 4, 4)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(pediatreCB)
+                                .addComponent(parentCB)
+                                .addComponent(forumCB)
+                                .addComponent(adminCB)
+                                .addComponent(nomTF)
+                                .addComponent(prenomTF)
+                                .addComponent(emailTF)
+                                .addComponent(dateInscriptionDP, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(2, 2, 2)
+                                    .addComponent(hommeRB)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(femmeRB)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tousRB))
+                                .addComponent(dateNaissanceDP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(nationnaliteTF)
+                                .addComponent(loginTF)))
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel9)
+                        .addComponent(jLabel4)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 411, Short.MAX_VALUE)
-                        .addComponent(jButton3)
+                        .addComponent(supprimerB)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addComponent(consulterB)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
@@ -318,21 +367,47 @@ public class RecherchePanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nationnaliteTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
-                        .addGap(0, 5, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))))
-                .addContainerGap())
+                            .addComponent(jLabel7))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(consulterB)
+                    .addComponent(supprimerB)
+                    .addComponent(viderChampsB))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void dateNaissanceDPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateNaissanceDPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dateNaissanceDPActionPerformed
+
+    private void dateNaissanceDPPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dateNaissanceDPPropertyChange
+        // TODO add your handling code here:
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+    }//GEN-LAST:event_dateNaissanceDPPropertyChange
+
+    private void dateInscriptionDPPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dateInscriptionDPPropertyChange
+        // TODO add your handling code here:
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+    }//GEN-LAST:event_dateInscriptionDPPropertyChange
+
+    private void supprimerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerBActionPerformed
+        if(rechercheT.getSelectedRow()!=-1){
+            String login= (String)rechercheT.getValueAt(rechercheT.getSelectedRow(), 0);
+            if (JOptionPane.showConfirmDialog(null,"Êtes-vous sur de vouloir supprimer l'utilisateur "+login+" ?","Confirmation de suppression.",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE )==JOptionPane.YES_OPTION) {
+                new UserDAO().deleteUser(login);
+                rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+            }
+        }
+
+    }//GEN-LAST:event_supprimerBActionPerformed
+
+    private void emailTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailTFKeyReleased
+        // TODO add your handling code here:
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+    }//GEN-LAST:event_emailTFKeyReleased
+
+    private void viderChampsBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viderChampsBActionPerformed
         // TODO add your handling code here:
         loginTF.setText("");
         nomTF.setText("");
@@ -341,61 +416,59 @@ public class RecherchePanel extends javax.swing.JPanel {
         dateNaissanceDP.setDate(null);
         emailTF.setText("");
         nationnaliteTF.setText("");
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
-    }//GEN-LAST:event_jButton1ActionPerformed
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+    }//GEN-LAST:event_viderChampsBActionPerformed
+
+    private void consulterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consulterBActionPerformed
+        // TODO add your handling code here:
+        if(rechercheT.getSelectedRow() == -1) return;
+        JFrame pf;
+        String typeP=(String) rechercheT.getValueAt(rechercheT.getSelectedRow(), 8);
+        String loginP=(String) rechercheT.getValueAt(rechercheT.getSelectedRow(), 0);
+        if("parent".equals(typeP))pf= new ParentForm(loginP);
+        else if("admin".equals(typeP)) pf= new AdminForm(loginP);
+        else if("forum".equals(typeP)) pf= new AdminForumForm(loginP);
+        else pf=new PediatreForm(loginP);
+        pf.setVisible(true);
+    }//GEN-LAST:event_consulterBActionPerformed
 
     private void pediatreCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pediatreCBActionPerformed
         // TODO add your handling code here:
         if(pediatreCB.isSelected()) type += "Pediatre ";
         else type = type.replace("Pediatre ", "");
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_pediatreCBActionPerformed
-
-    private void nomTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomTFKeyReleased
-        // TODO add your handling code here:
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
-    }//GEN-LAST:event_nomTFKeyReleased
-
-    private void dateInscriptionDPPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dateInscriptionDPPropertyChange
-        // TODO add your handling code here:
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
-    }//GEN-LAST:event_dateInscriptionDPPropertyChange
-
-    private void dateNaissanceDPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateNaissanceDPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dateNaissanceDPActionPerformed
-
-    private void dateNaissanceDPPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dateNaissanceDPPropertyChange
-        // TODO add your handling code here:
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
-    }//GEN-LAST:event_dateNaissanceDPPropertyChange
-
-    private void emailTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailTFKeyReleased
-        // TODO add your handling code here:
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
-    }//GEN-LAST:event_emailTFKeyReleased
 
     private void prenomTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_prenomTFKeyReleased
         // TODO add your handling code here:
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_prenomTFKeyReleased
 
-    private void femmeRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_femmeRBActionPerformed
+    private void nomTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomTFKeyReleased
         // TODO add your handling code here:
-        sexe= false;
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
-    }//GEN-LAST:event_femmeRBActionPerformed
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+    }//GEN-LAST:event_nomTFKeyReleased
 
-    private void nationnaliteTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nationnaliteTFKeyReleased
+    private void adminCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminCBActionPerformed
         // TODO add your handling code here:
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
-    }//GEN-LAST:event_nationnaliteTFKeyReleased
+        if(adminCB.isSelected()) type += "Admin ";
+        else type = type.replace("Admin ", "");
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+    }//GEN-LAST:event_adminCBActionPerformed
 
-    private void hommeRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hommeRBActionPerformed
+    private void parentCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parentCBActionPerformed
         // TODO add your handling code here:
-        sexe= true;
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
-    }//GEN-LAST:event_hommeRBActionPerformed
+        if(parentCB.isSelected()) type += "Parent ";
+        else type = type.replace("Parent ", "");
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+    }//GEN-LAST:event_parentCBActionPerformed
+
+    private void forumCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forumCBActionPerformed
+        // TODO add your handling code here:
+        if(forumCB.isSelected()) type += "Forum ";
+        else type = type.replace("Forum ", "");
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+    }//GEN-LAST:event_forumCBActionPerformed
 
     private void loginTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginTFActionPerformed
         // TODO add your handling code here:
@@ -408,51 +481,130 @@ public class RecherchePanel extends javax.swing.JPanel {
 
     private void loginTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginTFKeyReleased
         // TODO add your handling code here:
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_loginTFKeyReleased
 
     private void loginTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginTFKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_loginTFKeyTyped
 
+    private void nationnaliteTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nationnaliteTFKeyReleased
+        // TODO add your handling code here:
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+    }//GEN-LAST:event_nationnaliteTFKeyReleased
+
+    private void hommeRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hommeRBActionPerformed
+        // TODO add your handling code here:
+        sexe= new Boolean(true);
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+    }//GEN-LAST:event_hommeRBActionPerformed
+
+    private void femmeRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_femmeRBActionPerformed
+        // TODO add your handling code here:
+        sexe= new Boolean(false);
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+    }//GEN-LAST:event_femmeRBActionPerformed
+
     private void tousRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tousRBActionPerformed
         // TODO add your handling code here:
         sexe= null;
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
+        rechercheT.setModel(new RechercheTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
     }//GEN-LAST:event_tousRBActionPerformed
 
-    private void adminCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminCBActionPerformed
+    private void rechercheTKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechercheTKeyPressed
         // TODO add your handling code here:
-        if(adminCB.isSelected()) type += "Admin ";
-        else type = type.replace("Admin ", "");
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
-    }//GEN-LAST:event_adminCBActionPerformed
+        if(rechercheT.getSelectedRow() >= 0){
+            consulterB.setEnabled(true);
+            supprimerB.setEnabled(true);
+        }
+        else{
+            consulterB.setEnabled(false);
+            supprimerB.setEnabled(false);
+        }
+    }//GEN-LAST:event_rechercheTKeyPressed
 
-    private void forumCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forumCBActionPerformed
+    private void rechercheTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechercheTKeyReleased
         // TODO add your handling code here:
-        if(forumCB.isSelected()) type += "Forum ";
-        else type = type.replace("Forum ", "");
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
-    }//GEN-LAST:event_forumCBActionPerformed
+        if(rechercheT.getSelectedRow() >= 0){
+            consulterB.setEnabled(true);
+            supprimerB.setEnabled(true);
+        }
+        else{
+            consulterB.setEnabled(false);
+            supprimerB.setEnabled(false);
+        }
+    }//GEN-LAST:event_rechercheTKeyReleased
 
-    private void parentCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parentCBActionPerformed
+    private void rechercheTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechercheTKeyTyped
         // TODO add your handling code here:
-        if(parentCB.isSelected()) type += "Parent ";
-        else type = type.replace("Parent ", "");
-        rechercheT.setModel(new MyTableModel(loginTF.getText(), nomTF.getText(),prenomTF.getText(),emailTF.getText(),nationnaliteTF.getText(),dateInscriptionDP.getDate(),dateNaissanceDP.getDate(),sexe,type.split(" ")));
-    }//GEN-LAST:event_parentCBActionPerformed
+        if(rechercheT.getSelectedRow() >= 0){
+            consulterB.setEnabled(true);
+            supprimerB.setEnabled(true);
+        }
+        else{
+            consulterB.setEnabled(false);
+            supprimerB.setEnabled(false);
+        }
+    }//GEN-LAST:event_rechercheTKeyTyped
+
+    private void rechercheTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rechercheTMouseClicked
+        // TODO add your handling code here:
+        if(rechercheT.getSelectedRow() >= 0){
+            consulterB.setEnabled(true);
+            supprimerB.setEnabled(true);
+        }
+        else{
+            consulterB.setEnabled(false);
+            supprimerB.setEnabled(false);
+        }
+    }//GEN-LAST:event_rechercheTMouseClicked
+
+    private void rechercheTMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rechercheTMouseDragged
+        // TODO add your handling code here:
+        if(rechercheT.getSelectedRow() >= 0){
+            consulterB.setEnabled(true);
+            supprimerB.setEnabled(true);
+        }
+        else{
+            consulterB.setEnabled(false);
+            supprimerB.setEnabled(false);
+        }
+    }//GEN-LAST:event_rechercheTMouseDragged
+
+    private void rechercheTMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rechercheTMousePressed
+        // TODO add your handling code here:
+        if(rechercheT.getSelectedRow() >= 0){
+            consulterB.setEnabled(true);
+            supprimerB.setEnabled(true);
+        }
+        else{
+            consulterB.setEnabled(false);
+            supprimerB.setEnabled(false);
+        }
+    }//GEN-LAST:event_rechercheTMousePressed
+
+    private void rechercheTMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rechercheTMouseReleased
+        // TODO add your handling code here:
+        if(rechercheT.getSelectedRow() >= 0){
+            consulterB.setEnabled(true);
+            supprimerB.setEnabled(true);
+        }
+        else{
+            consulterB.setEnabled(false);
+            supprimerB.setEnabled(false);
+        }
+    }//GEN-LAST:event_rechercheTMouseReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox adminCB;
+    private javax.swing.JButton consulterB;
     private org.jdesktop.swingx.JXDatePicker dateInscriptionDP;
     private org.jdesktop.swingx.JXDatePicker dateNaissanceDP;
     private javax.swing.JTextField emailTF;
     private javax.swing.JRadioButton femmeRB;
     private javax.swing.JCheckBox forumCB;
     private javax.swing.JRadioButton hommeRB;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -470,6 +622,9 @@ public class RecherchePanel extends javax.swing.JPanel {
     private javax.swing.JCheckBox pediatreCB;
     private javax.swing.JTextField prenomTF;
     private javax.swing.JTable rechercheT;
+    private javax.swing.ButtonGroup sexeBG;
+    private javax.swing.JButton supprimerB;
     private javax.swing.JRadioButton tousRB;
+    private javax.swing.JButton viderChampsB;
     // End of variables declaration//GEN-END:variables
 }

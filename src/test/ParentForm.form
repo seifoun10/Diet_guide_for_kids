@@ -48,6 +48,11 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
       </AccessibilityProperties>
@@ -55,6 +60,11 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="jPanel2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Informations personnelles">
@@ -91,6 +101,9 @@
           <SubComponents>
             <Container class="javax.swing.JPanel" name="jPanel5">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                     <TitledBorder title="Informations g&#xe9;n&#xe9;rales">
@@ -309,6 +322,9 @@
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel1">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                     <TitledBorder title="Informations du compte">
@@ -405,7 +421,7 @@
                 <Component class="javax.swing.JLabel" name="nbEnfantL">
                   <Properties>
                     <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="&quot;&quot;+parent.getEnfant().size()" type="code"/>
+                      <Connection code="&quot;&quot;+parent.getEnfants().size()" type="code"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -414,8 +430,13 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel3">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_LayoutCodePost" type="java.lang.String" value="if(parent.getEnfant().size()!=0)"/>
+            <AuxValue name="JavaCodeGenerator_LayoutCodePost" type="java.lang.String" value="if(parent.getEnfants().size()!=0)"/>
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
@@ -448,6 +469,9 @@
           <SubComponents>
             <Container class="javax.swing.JPanel" name="jPanel6">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                     <TitledBorder title="Informations des Enfants">
@@ -634,7 +658,7 @@
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="}"/>
-                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="if(parent.getEnfant().size()!=0){&#xa;DefaultComboBoxModel&lt;Integer&gt; m = new DefaultComboBoxModel&lt;Integer&gt;();&#xa;for(int i=0;i&lt;parent.getEnfant().size();i++) m.addElement(new Integer(parent.getEnfant().get(i).getId()));"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="if(parent.getEnfants().size()!=0){&#xa;DefaultComboBoxModel&lt;Integer&gt; m = new DefaultComboBoxModel&lt;Integer&gt;();&#xa;for(int i=0;i&lt;parent.getEnfants().size();i++) m.addElement(new Integer(parent.getEnfants().get(i).getId()));"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="dateAjoutEnfantL">
@@ -642,7 +666,7 @@
                     <Property name="text" type="java.lang.String" value="-"/>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(!parent.getEnfant().isEmpty()) dateAjoutEnfantL.setText(new SimpleDateFormat(&quot;dd/MM/yyyy&quot;).format(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getDateAjout()));"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(!parent.getEnfants().isEmpty()) dateAjoutEnfantL.setText(new SimpleDateFormat(&quot;dd/MM/yyyy&quot;).format(parent.getEnfants().get(idEnfantCB.getSelectedIndex()).getDateAjout()));"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="nationaliteEnfantL">
@@ -650,7 +674,7 @@
                     <Property name="text" type="java.lang.String" value="-"/>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(parent.getEnfant().size()!=0) nationaliteEnfantL.setText(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getNationalite());"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(parent.getEnfants().size()!=0) nationaliteEnfantL.setText(parent.getEnfants().get(idEnfantCB.getSelectedIndex()).getNationalite());"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="imcAjoutL">
@@ -658,7 +682,7 @@
                     <Property name="text" type="java.lang.String" value="-"/>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(!parent.getEnfant().isEmpty()) imcAjoutL.setText(&quot;&quot;+parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getImcAjout());"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(!parent.getEnfants().isEmpty()) imcAjoutL.setText(&quot;&quot;+parent.getEnfants().get(idEnfantCB.getSelectedIndex()).getImcAjout());"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="imcActuelleL">
@@ -666,7 +690,7 @@
                     <Property name="text" type="java.lang.String" value="-"/>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(!parent.getEnfant().isEmpty()) imcActuelleL.setText(&quot;&quot;+parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getImcActuel());"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(!parent.getEnfants().isEmpty()) imcActuelleL.setText(&quot;&quot;+parent.getEnfants().get(idEnfantCB.getSelectedIndex()).getImcActuel());"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="dateNaissanceEnfantL">
@@ -674,7 +698,7 @@
                     <Property name="text" type="java.lang.String" value="-"/>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(parent.getEnfant().size()!=0) dateNaissanceEnfantL.setText(new SimpleDateFormat(&quot;dd/MM/yyyy&quot;).format(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getDateNaissance()));"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(parent.getEnfants().size()!=0) dateNaissanceEnfantL.setText(new SimpleDateFormat(&quot;dd/MM/yyyy&quot;).format(parent.getEnfants().get(idEnfantCB.getSelectedIndex()).getDateNaissance()));"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="sexeEnfantL">
@@ -682,7 +706,7 @@
                     <Property name="text" type="java.lang.String" value="-"/>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(!parent.getEnfant().isEmpty()) if(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).isSexe()) sexeEnfantL.setText(&quot;Homme&quot;);else sexeEnfantL.setText(&quot;Femme&quot;);"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(!parent.getEnfants().isEmpty()) if(parent.getEnfants().get(idEnfantCB.getSelectedIndex()).isSexe()) sexeEnfantL.setText(&quot;Homme&quot;);else sexeEnfantL.setText(&quot;Femme&quot;);"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="prenomEnfantL">
@@ -690,7 +714,7 @@
                     <Property name="text" type="java.lang.String" value="-"/>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(parent.getEnfant().size()!=0) prenomEnfantL.setText(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getPrenom());"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(parent.getEnfants().size()!=0) prenomEnfantL.setText(parent.getEnfants().get(idEnfantCB.getSelectedIndex()).getPrenom());"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="nomEnfantL">
@@ -698,7 +722,7 @@
                     <Property name="text" type="java.lang.String" value="-"/>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(parent.getEnfant().size()!=0) nomEnfantL.setText(parent.getEnfant().get(idEnfantCB.getSelectedIndex()).getNom());"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if(parent.getEnfants().size()!=0) nomEnfantL.setText(parent.getEnfants().get(idEnfantCB.getSelectedIndex()).getNom());"/>
                   </AuxValues>
                 </Component>
               </SubComponents>
@@ -706,6 +730,11 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel4">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Favoris">

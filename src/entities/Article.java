@@ -1,10 +1,13 @@
+package entities;
+
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * To change this license header, choose License Headers in Project 
+Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-package entities;
+
 
 import java.util.Date;
 
@@ -21,6 +24,16 @@ public class Article {
     private int evaluation;
     private int nbLecture;
     private int nbFavoris;
+    private int nbr_partage;
+
+    public int getNbr_partage() {
+        return nbr_partage;
+    }
+
+    public void setNbr_partage(int nbr_partage) {
+        this.nbr_partage = nbr_partage;
+    }
+    
 
     public int getId() {
         return id;

@@ -6,7 +6,7 @@
 package test;
 
 import dao.AdminForumDAO;
-import entities.AdminForum;
+import entities.AdministrateurForum;
 import java.text.SimpleDateFormat;
 
 /**
@@ -18,7 +18,7 @@ public class AdminForumForm extends javax.swing.JFrame {
     /**
      * Creates new form AdminForumForm
      */
-     AdminForum adminForum;
+     AdministrateurForum adminForum;
     public AdminForumForm(String login) {
         adminForum= new AdminForumDAO().findAdminForumByString(login);
         initComponents();
@@ -50,8 +50,6 @@ public class AdminForumForm extends javax.swing.JFrame {
         prenomL = new javax.swing.JLabel();
         nomL = new javax.swing.JLabel();
         loginL = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        cinL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -100,11 +98,6 @@ public class AdminForumForm extends javax.swing.JFrame {
 
         loginL.setText(adminForum.getLogin());
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel8.setText("CIN");
-
-        cinL.setText(adminForum.getCin());
-
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -119,11 +112,9 @@ public class AdminForumForm extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jLabel9)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cinL)
                     .addComponent(dateInscriptionL)
                     .addComponent(loginL)
                     .addComponent(nomL)
@@ -137,13 +128,10 @@ public class AdminForumForm extends javax.swing.JFrame {
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(loginL))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(cinL))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -156,7 +144,7 @@ public class AdminForumForm extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(emailL))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(nationaliteL))
@@ -171,7 +159,8 @@ public class AdminForumForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(dateInscriptionL)))
+                    .addComponent(dateInscriptionL))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -230,7 +219,6 @@ public class AdminForumForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel cinL;
     private javax.swing.JLabel dateInscriptionL;
     private javax.swing.JLabel dateNaissanceL;
     private javax.swing.JLabel emailL;
@@ -241,7 +229,6 @@ public class AdminForumForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel loginL;
