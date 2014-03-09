@@ -29,8 +29,7 @@ public class ArticleDAO {
             ps.setString(1, loginParent);
             ResultSet resultat = ps.executeQuery();
             while(resultat.next()){
-                Article article;
-                article= new Article();
+                Article article= new Article();
                 article.setId(resultat.getInt("a.Id_Article"));
                 article.setTitre(resultat.getString("Titre"));
                 article.setAuteur(resultat.getString("Auteur"));
